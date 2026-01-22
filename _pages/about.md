@@ -14,6 +14,7 @@ My research interests lie at the intersection of technology, social science, and
 * **Game Studies:** Exploring algorithmic nationalism, historical reconstruction, and architectural rhetoric in games 
 * **AI & Society:** Investigating the impact of AI on urban planning, crime analysis.
 * **Data Science:** Applying machine learning models  to social inquiries.
+
 ### Research Experience
 **Research Assistant** | **HKUST(Guangzhou) PGSC Laboratory**
 **Research Assistant** | **CUFE Sustainable Guidelines Research Center**
