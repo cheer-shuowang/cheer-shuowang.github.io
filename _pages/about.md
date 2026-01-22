@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Master's student at the **National University of Singapore (NUS)**, Department of the Built Environment. I am pursuing a Master of Science in Artificial Intelligence (Online) at the **University of Colorado Boulder**.
+I am a Master's student at the **National University of Singapore (NUS)**, Department of the Built Environment. I am also pursuing a Master of Science in Artificial Intelligence (Online) at the **University of Colorado Boulder**.
 
 My research interests lie at the intersection of technology, social science, and humanities, with a specific focus on:
 
