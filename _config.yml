@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Your Name / Site Title"
+title                    : "Wang Shuo"
 title_separator          : "-"
 name                     : &name "Wang Shuo"
 description              : &description "Wang Shuo's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Wang Shuo"
   pronouns         :  ""  
-  bio              : "master student in Department of the Built Environment "
+  bio              : "Master student in Department of the Built Environment "
   location         : "singapore"
   employer         : "National University of Singapore"
   email            : "shuowang@u.nus.edu"    
