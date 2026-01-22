@@ -15,10 +15,14 @@ My research interests lie at the intersection of technology, social science, and
 * **AI & Society:** Investigating the impact of AI on urban planning, crime analysis.
 * **Data Science:** Applying machine learning models  to social inquiries.
 
-### Research Experience
 **Research Assistant** | **HKUST(Guangzhou) PGSC Laboratory**
+* Constructed structured databases for sustainability policies and developed unified statistical frameworks to reduce data error rates.
+
 **Research Assistant** | **CUFE Sustainable Guidelines Research Center**
+* Integrated climate simulation data to quantify disaster impacts on crop yields; authored research reports supporting policy briefs.
+
 **Research Assistant** | **Institute of Public Safety and Risk Governance, OUC**
+* Participated in research on public safety governance and risk assessment.
 
 ### Professional Experience
 Prior to my graduate studies, I worked as a **Product Planner** at **Tencent (腾讯)**. I also gained extensive Product Management experience through internships at leading tech companies:
