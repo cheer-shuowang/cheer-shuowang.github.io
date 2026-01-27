@@ -1,33 +1,28 @@
 ---
 permalink: /
-title: "Hello, I am Wang Shuo（王硕）"
+title: "Hello, I am Wang Shuo (王硕) 👋"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-I am a Master's student at the **National University of Singapore (NUS)**, Department of the Built Environment. I am also pursuing a Master of Science in Artificial Intelligence (Online) at the **University of Colorado Boulder**.
+> **"Bridging the gap between Virtual Architectures and Physical Realities."**
 
-My research interests lie at the intersection of technology, social science, and humanities, with a specific focus on:
+I am a dual-degree graduate student exploring how digital systems shape our understanding of the physical world. Currently, I am pursuing a **Master of Science at the National University of Singapore (NUS)** in the Department of the Built Environment, while simultaneously earning an **M.S. in Artificial Intelligence** from the **University of Colorado Boulder**.
 
-* **Game Studies:** Exploring algorithmic nationalism, historical reconstruction, and architectural rhetoric in games 
-* **AI & Society:** Investigating the impact of AI on urban planning, crime analysis.
-* **Data Science:** Applying machine learning models  to social inquiries.
+My journey began in the tech industry as a **Product Planner at Tencent**, where I witnessed firsthand how algorithms influence user behavior. Now, I leverage that industry experience to fuel my academic research.
 
-**Research Assistant** | **HKUST(Guangzhou) PGSC Laboratory**
-* Constructed structured databases for sustainability policies and developed unified statistical frameworks to reduce data error rates.
+My work sits at the intersection of **Technology, Urban Science, and Humanities**, with a specific focus on:
 
-**Research Assistant** | **CUFE Sustainable Guidelines Research Center**
-* Integrated climate simulation data to quantify disaster impacts on crop yields; authored research reports supporting policy briefs.
+* 🎮 **Game Studies:** Analyzing how video games (like *Victoria 3* and *Where Winds Meet*) function as "digital laboratories" for historical reconstruction, algorithmic nationalism, and architectural rhetoric.
+* 🤖 **AI & Society:** Investigating the impact of Artificial Intelligence on urban planning and social safety, including crime analysis and support systems for vulnerable populations.
+* 📊 **Data Science:** Applying machine learning models to solve complex social inquiries and visualize urban dynamics.
 
-**Research Assistant** | **Institute of Public Safety and Risk Governance, OUC**
-* Participated in research on public safety governance and risk assessment.
+I am always looking for new ways to combine data science with social theory.
 
-### Professional Experience
-Prior to my graduate studies, I worked as a **Product Planner** at **Tencent (腾讯)**. I also gained extensive Product Management experience through internships at leading tech companies:
-* **Bilibili (B站)**
-* **Weibo (微博)**
-* **Hero games(英雄游戏）**
+[📥 Download CV](/cv/) &nbsp;&nbsp; [✉️ Email Me](mailto:shuowang@u.nus.edu)
+
+
 
 
