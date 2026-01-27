@@ -5,8 +5,7 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
----
-I am a dual-degree graduate student exploring how digital systems shape our understanding of the physical world. Currently, I am pursuing a **Master of Science at the National University of Singapore (NUS)** in the Department of the Built Environment, while simultaneously earning an **M.S. in Artificial Intelligence（online)** from the **University of Colorado Boulder**.
+I am pursuing a **Master of Science at the National University of Singapore (NUS)** in the Department of the Built Environment, while simultaneously earning an **M.S. in Artificial Intelligence（online)** from the **University of Colorado Boulder**.
 
 My journey began in the tech industry as a **Product Planner at Tencent**, where I witnessed firsthand how algorithms influence user behavior. Now, I leverage that industry experience to fuel my academic research.
 
