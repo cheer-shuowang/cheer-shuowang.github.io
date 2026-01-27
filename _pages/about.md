@@ -12,7 +12,7 @@ My journey began in the tech industry as a **Product Planner at Tencent**, where
 
 My work sits at the intersection of **Technology, Urban Science, and Humanities**, with a specific focus on:
 
-* 🎮 **Game Studies:** Analyzing how video games (like *Victoria 3* and *Where Winds Meet*) function as "digital laboratories" for historical reconstruction, algorithmic nationalism, and architectural rhetoric.
+* 🎮 **Game Studies:** Analyzing how video games function as "digital laboratories" for historical reconstruction, algorithmic nationalism, and architectural rhetoric.
 * 🤖 **AI & Society:** Investigating the impact of Artificial Intelligence on urban planning and social safety, including crime analysis and support systems for vulnerable populations.
 * 📊 **Data Science:** Applying machine learning models to solve complex social inquiries and visualize urban dynamics.
 
