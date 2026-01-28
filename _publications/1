@@ -1,0 +1,18 @@
+---
+title: "STGCN-Driven Multi-Objective Optimization for Bus Stop Adaptation in Old Urban Areas"
+collection: publications
+permalink: /publication/2025-01-28-stgcn-bus-optimization
+excerpt: 'This poster presents a novel STGCN-driven framework for optimizing bus stop layouts in aging urban districts, significantly improving passenger flow prediction and accessibility.'
+date: 2025-04-01
+venue: 'The 4th Symposium on Frontier Applications of Operations Research and Artificial Intelligence in Industry'
+paperurl: '' 
+citation: 'Wang, S. (2025). "STGCN-Driven Multi-Objective Optimization for Bus Stop Adaptation in Old Urban Areas." <i>The 4th Symposium on Frontier Applications of Operations Research and Artificial Intelligence in Industry</i>.'
+---
+
+## Abstract
+
+Old urban districts often suffer from static bus stop layouts that fail to meet dynamic travel demands and the accessibility needs of aging populations. This study proposes a novel optimization framework integrating multi-source data fusion, **Spatio-Temporal Graph Convolutional Networks (STGCN)**, and multi-objective integer programming. 
+
+We utilize STGCN to capture spatial-temporal dependencies, achieving a **25% improvement** in passenger flow prediction accuracy over traditional ARIMA models. Subsequently, a multi-objective optimization model is constructed to balance coverage fairness, travel time, and operational costs. 
+
+Validated in Qingdao’s core district, the optimized layout improved dynamic supply-demand matching by **18.6%** and reduced average wait times by **12.3%**, providing a data-driven solution for urban micro-renewal and smart transportation.
