@@ -88,7 +88,7 @@ nav {
   display: flex; gap: 42px; align-items: center;
 }
 .hero-avatar {
-  width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
+  width: 148px; height: 148px; border-radius: 10px; object-fit: cover;
   border: 1px solid var(--color-border);
   box-shadow: 0 0 0 6px var(--color-card-bg), var(--shadow-soft);
   flex-shrink: 0; background: var(--color-tag-bg);
@@ -188,11 +188,19 @@ nav {
 .pub-item:hover { border-left-color: var(--color-accent); }
 .pub-title { font-weight: 600; font-size: 0.95rem; color: var(--color-text); line-height: 1.5; }
 .pub-venue { font-style: italic; color: var(--color-accent); font-size: 0.87rem; margin-top: 2px; }
+.pub-venue a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(26,82,118,0.3); transition: border-color 0.2s; }
+.pub-venue a:hover { border-bottom-color: var(--color-accent); }
 .pub-authors { font-size: 0.87rem; color: var(--color-text-secondary); margin-top: 3px; }
 .pub-authors .me { font-weight: 700; color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent-light); text-underline-offset: 2px; }
 .pub-authors a { color: var(--color-accent-light); text-decoration: none; }
 .item-desc { font-size: 0.86rem; color: var(--color-text-secondary); margin-top: 6px; line-height: 1.66; max-width: 64ch; }
 .project-chinese { font-size: 0.84rem; color: var(--color-text-secondary); margin-top: 2px; }
+.workstreams { margin-top: 11px; display: flex; flex-direction: column; gap: 11px; }
+.workstream { padding-left: 14px; border-left: 2px solid var(--color-border); }
+.ws-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 3px; }
+.ws-desc { font-size: 0.86rem; color: var(--color-text-secondary); line-height: 1.6; max-width: 64ch; }
+.ws-desc a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.ws-desc a:hover { border-bottom-color: var(--color-accent-light); }
 
 /* type tags */
 .tag { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 5px; margin-left: 8px; vertical-align: middle; white-space: nowrap; }
@@ -200,6 +208,7 @@ nav {
 .tag-working { background: var(--color-tag-bg); color: var(--color-text-secondary); border: 1px solid var(--color-border); }
 .tag-poster { background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border); }
 .tag-project { background: #f1eadb; color: #8a6d3b; border: 1px solid #e6dcc4; }
+.tag-thesis { background: rgba(122,59,59,0.09); color: #7a3b3b; border: 1px solid #e2d0d0; }
 
 /* === IMAGES: single figure === */
 .item-figure { margin-top: 12px; max-width: 440px; border: 1px solid var(--color-border); border-radius: 10px; overflow: hidden; background: var(--color-card-bg); position: relative; }
@@ -292,7 +301,6 @@ footer a:hover { text-decoration: underline; }
 <a onclick="showPage('experience')" data-page="experience">Experience</a>
 <a onclick="showPage('research')" data-page="research">Research</a>
 <a onclick="showPage('misc')" data-page="misc">Teaching & Awards</a>
-<a onclick="showPage('blog')" data-page="blog">Blog</a>
 </div>
 </nav>
 </header>
@@ -436,7 +444,7 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 <div class="page-inner">
 <h2 class="section-title">Research</h2>
 <div class="section-divider"></div>
-<p class="page-intro">My work spans three connected threads. Below, publications and projects are grouped by research direction; each entry is tagged by type — <em>Peer-Reviewed</em>, <em>Working Paper</em>, <em>Poster</em>, or <em>Project</em>. (* denotes corresponding author.)</p>
+<p class="page-intro">Across games, public life, and cultural heritage, my research asks one question: how do people — as communities, publics, and cultures — make meaning and act together in a digital age? A shared computational toolkit runs through all of it: NLP and text mining, machine learning, and agent- and LLM-based simulation. The three threads below are windows onto that single problem of collective behavior, grouped by domain and tagged by type — <em>Peer-Reviewed</em>, <em>Working Paper</em>, <em>Poster</em>, <em>Project</em>, or <em>Thesis</em>. (* denotes corresponding author.)</p>
 
 <!-- ---------- DIRECTION I ---------- -->
 <div class="direction">
@@ -467,16 +475,10 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 </div>
 
 <div class="pub-item">
-<div class="pub-title">"Dead Game Walking": Predicting Player Retention in Live Service Games from Community Sentiment Signals<span class="tag tag-working">Working Paper</span></div>
-<div class="pub-venue">Submitted to FDG 2026</div>
-<div class="pub-authors"><span class="me">Shuo Wang</span>, Xue Wang*</div>
-<div class="item-desc">Modeling how shifts in community sentiment forecast churn across live-service titles.</div>
-<!-- IMAGE EXAMPLE — single figure. Add your file to images/ then update src/alt/caption. Delete this <figure> block if not needed. -->
-<figure class="item-figure">
-<img src="images/dead-game-retention.png" alt="Chart of community sentiment trend against player retention over time" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
-<span class="ph-hint">Add image → images/dead-game-retention.png</span>
-<figcaption>Community sentiment signals vs. player retention (work in progress).</figcaption>
-</figure>
+<div class="pub-title">Algorithmic Selection and Value Alienation in the Esports Labor Market: A Study of Digital Meritocracy<span class="tag tag-project">Project</span></div>
+<div class="pub-venue">In progress</div>
+<div class="pub-authors">Participant · with Runyi Ma and Yining Fang</div>
+<div class="item-desc">How algorithmic ranking ("digital meritocracy") governs entry, selection, and valuation in the professional League of Legends labor market, and whether it drives "digital alienation" — via multi-source scraping, logistic regression, and survival analysis.</div>
 </div>
 </div>
 
@@ -485,8 +487,8 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 <div class="direction-head">
 <span class="direction-num">II</span>
 <div>
-<div class="direction-title">Computational Social Science & Urban Analytics</div>
-<div class="direction-desc">Computational modeling of public opinion, collective behavior, and urban life — from LLM simulation and social-media analysis to spatial-temporal modeling.</div>
+<div class="direction-title">Public Opinion, Risk & Urban Society</div>
+<div class="direction-desc">How Chinese publics and cities behave under stress and in everyday life — opinion polarization, crisis and risk governance, and the social fabric of urban space — read through text mining, LLM simulation, and spatial modeling.</div>
 </div>
 </div>
 
@@ -498,16 +500,22 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 
 <div class="pub-item">
 <div class="pub-title">Generation, Evolution and Governance Mechanisms of Public Opinion Polarization in Public Emergencies<span class="tag tag-project">Project</span></div>
-<div class="project-chinese">突发公共事件舆情极化的生成演化与治理机制研究</div>
 <div class="pub-venue">Shandong Provincial Natural Science Foundation — Youth Project (Grant No. ZR2023QG090)</div>
 <div class="pub-authors">Participant</div>
 </div>
 
 <div class="pub-item">
 <div class="pub-title">Resilience Governance of Risks in Coastal Megacities under the Holistic National Security Perspective<span class="tag tag-project">Project</span></div>
-<div class="project-chinese">总体国家安全观下沿海特大城市风险的韧性治理研究</div>
 <div class="pub-venue">National Social Science Fund of China — Key Project (Grant No. 21AZZ014)</div>
 <div class="pub-authors">Participant · 2023 – 2025</div>
+</div>
+
+<!-- Undergraduate thesis — title below is drafted from the abstract; confirm the official title, add advisor, and verify year. -->
+<div class="pub-item">
+<div class="pub-title">Institution, Context, and Action: A Text-Mining Analysis of Crisis Evolution in China's Major Disaster Accidents (2010–2025)<span class="tag tag-thesis">Bachelor's Thesis</span></div>
+<div class="pub-venue">Undergraduate Thesis · Ocean University of China · advised by <a href="http://siapa.ouc.edu.cn/2021/0827/c18282a344995/page.htm" target="_blank" rel="noopener">Xue Wang</a> · 2025</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span></div>
+<div class="item-desc">LDA topic modeling of 30 major-disaster investigation reports (2010–2025) from China's Ministry of Emergency Management, building an "institution–context–action" framework of crisis evolution.</div>
 </div>
 
 <div class="pub-item">
@@ -535,35 +543,33 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 </div>
 
 <div class="pub-item">
-<div class="pub-title">Embodied Forms: Collaborative Spatial Computing Frameworks for Craft Heritage in Singapore<span class="tag tag-project">Project</span></div>
-<div class="pub-venue">CALM Lab, NUS · Heritage Research Grant, National Heritage Board · advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a></div>
-<div class="pub-authors">Role &amp; contributions — <em>details forthcoming</em></div>
-<div class="item-desc">[Placeholder — replace with your role and a 1–2 sentence description of what you built.]</div>
-<!-- IMAGE SLOT — add files to images/, update src/alt/caption; delete figures you don't need -->
-<div class="research-gallery">
-<figure>
-<img src="images/yh-embodied-1.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
-<span class="ph-hint">images/yh-embodied-1.jpg</span>
-<figcaption>Caption</figcaption>
-</figure>
-<figure>
-<img src="images/yh-embodied-2.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
-<span class="ph-hint">images/yh-embodied-2.jpg</span>
-<figcaption>Caption</figcaption>
-</figure>
-</div>
-</div>
-
-<div class="pub-item">
 <div class="pub-title">Playing Heaven: Remapping Early Modern Neo-Confucian Worlds with AI<span class="tag tag-project">Project</span></div>
 <div class="pub-venue">Part of the <a href="https://www.schmidtsciences.org/humanities-and-ai-virtual-institute/#modal-playing-heaven-remapping-early-modern-neo-confucian-worlds-with-ai" target="_blank" rel="noopener">Schmidt Sciences Humanities &amp; AI Virtual Institute (HAVI)</a>, 2025 · advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a> (NUS)</div>
 <div class="pub-authors">PIs: Javier Cha (HKU), Michael Chung (HKUST), Yumeng Hou &amp; Miguel Escobar Varela (NUS)</div>
-<div class="item-desc">An inter-university Hong Kong–Singapore project building <em>DeepPast</em>, a transformer-based AI research assistant for low-resource early-modern East Asian texts, to remap the intellectual history of Neo-Confucianism. [Your role &amp; contributions — details forthcoming.]</div>
-<figure class="item-figure">
-<img src="images/yh-playing-heaven.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
-<span class="ph-hint">Add image → images/yh-playing-heaven.jpg</span>
+<div class="item-desc">An inter-university Hong Kong–Singapore project building <em>DeepPast</em>, a transformer-based AI research assistant for low-resource early-modern East Asian texts, to remap the intellectual history of Neo-Confucianism. My work spans two parts:</div>
+<div class="workstreams">
+<div class="workstream">
+<div class="ws-label">Dataset Construction</div>
+<div class="ws-desc">A vision-language-model (Qwen3-VL) pipeline that extracts structured information from historical source texts — illustrations, postures, and transcriptions — across a metadata → page-indexing → extraction → human-verification workflow. <a href="https://github.com/cheer-shuowang/vlm-martial-arts-dataset" target="_blank" rel="noopener">Code ↗</a></div>
+</div>
+<div class="workstream">
+<div class="ws-label">Semantic Change</div>
+<div class="ws-desc">Modeling how the meanings of key philosophical concepts shifted across early-modern Neo-Confucian texts. [Details forthcoming — send specifics and I'll refine.]</div>
+</div>
+</div>
+<!-- IMAGE SLOT — add files to images/, update src/alt/caption; delete figures you don't need -->
+<div class="research-gallery">
+<figure>
+<img src="images/playing-heaven-1.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">images/playing-heaven-1.jpg</span>
 <figcaption>Caption</figcaption>
 </figure>
+<figure>
+<img src="images/playing-heaven-2.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">images/playing-heaven-2.jpg</span>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
 </div>
 </div>
 
@@ -595,21 +601,6 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 <div class="award-info"><div class="award-name">Chuying Excellence Scholarship (储英卓越奖学金)</div><div class="award-org">Ocean University of China</div></div>
 <div class="award-year">2024</div>
 </div>
-</div>
-</div>
-</div>
-
-<!-- ===== PAGE: BLOG ===== -->
-<div class="page" id="page-blog">
-<div class="page-inner">
-<h2 class="section-title">Blog</h2>
-<div class="section-divider"></div>
-<div class="blog-placeholder">
-<p>Writing is on its way. Stay tuned.</p>
-<!-- TODO: Replace '#' with your Substack URL once ready -->
-<!--
-<a href="#" target="_blank" rel="noopener">Read on Substack</a>
--->
 </div>
 </div>
 </div>
@@ -653,7 +644,7 @@ document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
 
 // open the right page if the URL has a hash (shareable links)
 (function () {
-const valid = ['home','experience','research','misc','blog'];
+const valid = ['home','experience','research','misc'];
 const id = (location.hash || '').replace('#','');
 if (valid.includes(id) && id !== 'home') showPage(id);
 })();
