@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Wang Shuo (王硕) — Interdisciplinary researcher in Game Studies, Computational Social Science, and AI & Society. M.S. student at NUS and CU Boulder.">
+
+<!-- Social preview (invisible; improves shared links) -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Wang Shuo (王硕)">
+<meta property="og:description" content="Interdisciplinary researcher — Game Studies · Computational Social Science · AI & Society.">
+<meta property="og:image" content="profile.png">
+<meta property="og:url" content="https://cheer-shuowang.github.io/">
+<meta name="twitter:card" content="summary">
+
+<title>Wang Shuo (王硕)</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a5276'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fafaf8' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --color-bg: #faf9f5;
+  --color-text: #232220;
+  --color-text-secondary: #5d5b53;
+  --color-accent: #1a5276;
+  --color-accent-light: #2980b9;
+  --color-border: #e6e2d9;
+  --color-border-soft: #efece4;
+  --color-highlight: #fbf7ea;
+  --color-highlight-border: #ece2c4;
+  --color-card-bg: #ffffff;
+  --color-tag-bg: #edf1f4;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --max-width: 760px;
+  --shadow-soft: 0 1px 2px rgba(35,34,32,0.03), 0 6px 20px rgba(35,34,32,0.04);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.72;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--color-accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 4px; }
+
+.news-date, .exp-period, .teaching-period, .award-year { font-feature-settings: "tnum" 1; }
+
+/* === HEADER === */
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250, 249, 245, 0.86);
+  backdrop-filter: saturate(150%) blur(14px);
+  -webkit-backdrop-filter: saturate(150%) blur(14px);
+  border-bottom: 1px solid var(--color-border);
+}
+nav {
+  max-width: var(--max-width); margin: 0 auto; padding: 15px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-name {
+  font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;
+  font-variation-settings: "opsz" 28; color: var(--color-text);
+  text-decoration: none; letter-spacing: -0.015em; cursor: pointer;
+}
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-links a {
+  font-size: 0.84rem; color: var(--color-text-secondary); text-decoration: none;
+  font-weight: 400; transition: color 0.2s ease, background 0.2s ease;
+  padding: 5px 12px; border-radius: 6px; cursor: pointer;
+}
+.nav-links a:hover { color: var(--color-accent); background: var(--color-tag-bg); }
+.nav-links a.active { color: var(--color-accent); background: var(--color-tag-bg); font-weight: 600; }
+
+/* === HERO === */
+.hero {
+  max-width: var(--max-width); margin: 0 auto; padding: 56px 24px 40px;
+  display: flex; gap: 42px; align-items: center;
+}
+.hero-avatar {
+  width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0 0 6px var(--color-card-bg), var(--shadow-soft);
+  flex-shrink: 0; background: var(--color-tag-bg);
+}
+.hero-info { flex: 1; }
+.hero-info h1 {
+  font-family: var(--font-serif); font-size: 2.15rem; font-weight: 600;
+  font-variation-settings: "opsz" 48; letter-spacing: -0.025em;
+  line-height: 1.08; margin-bottom: 6px;
+}
+.hero-tagline { font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 6px; font-weight: 400; letter-spacing: 0.005em; }
+.hero-affiliation { font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 18px; line-height: 1.62; }
+.hero-affiliation strong { color: var(--color-text); font-weight: 600; }
+.hero-links { display: flex; gap: 9px; flex-wrap: wrap; }
+.hero-links a {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+  font-size: 0.84rem; color: var(--color-accent); text-decoration: none;
+  border: 1px solid var(--color-border); border-radius: 7px;
+  transition: all 0.2s ease; font-weight: 500; background: var(--color-card-bg);
+}
+.hero-links a:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); transform: translateY(-1px); }
+.hero-links a svg { width: 14px; height: 14px; }
+
+/* === PAGE CONTENT === */
+.page { display: none; }
+.page.active { display: block; }
+.page-inner { max-width: var(--max-width); margin: 0 auto; padding: 8px 24px 64px; animation: pageFade 0.35s ease; }
+@keyframes pageFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === SHARED === */
+.section-title {
+  font-family: var(--font-serif); font-size: 1.55rem; font-weight: 500;
+  font-variation-settings: "opsz" 40; color: var(--color-text);
+  margin-bottom: 10px; letter-spacing: -0.015em;
+}
+.section-divider { width: 100%; height: 1px; background: linear-gradient(to right, var(--color-accent) 0 36px, var(--color-border) 36px); margin-bottom: 28px; }
+.page-intro { font-size: 0.94rem; color: var(--color-text-secondary); margin: -12px 0 30px; max-width: 62ch; line-height: 1.7; }
+
+/* === NEWS === */
+.news-box { background: var(--color-highlight); border: 1px solid var(--color-highlight-border); border-radius: 12px; padding: 18px 22px; margin-bottom: 34px; }
+.news-label { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; font-variation-settings: "opsz" 20; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+.news-toggle-icon { font-size: 0.72rem; color: var(--color-text-secondary); transition: transform 0.3s ease; display: inline-block; }
+.news-label.collapsed .news-toggle-icon { transform: rotate(-90deg); }
+.news-body { overflow: hidden; max-height: 320px; opacity: 1; transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease; margin-top: 12px; }
+.news-body.collapsed { max-height: 0; opacity: 0; margin-top: 0; }
+.news-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.news-list li { font-size: 0.89rem; line-height: 1.6; color: var(--color-text-secondary); }
+.news-list li a { color: var(--color-accent-light); text-decoration: none; }
+.news-list li a:hover { text-decoration: underline; }
+.news-date { display: inline-block; font-size: 0.74rem; font-weight: 600; color: var(--color-accent); background: rgba(26, 82, 118, 0.08); padding: 1px 8px; border-radius: 5px; margin-right: 7px; letter-spacing: 0.01em; }
+
+/* === HOME TWO-COLUMN (About + News sidebar) === */
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 236px; gap: 40px; align-items: start; }
+.home-aside { position: sticky; top: 92px; }
+.news-card { background: var(--color-highlight); border: 1px solid var(--color-highlight-border); border-radius: 12px; padding: 16px 18px; }
+.news-card-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; font-variation-settings: "opsz" 20; margin-bottom: 13px; display: flex; align-items: center; gap: 8px; letter-spacing: -0.01em; }
+.news-card-title::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; }
+.news-card .news-list { gap: 12px; }
+.news-card .news-list li { font-size: 0.85rem; line-height: 1.55; }
+.news-card .news-date { margin-bottom: 3px; }
+@media (max-width: 760px) {
+  .home-grid { grid-template-columns: 1fr; gap: 26px; }
+  .home-aside { position: static; order: -1; }
+}
+
+/* === ABOUT === */
+.about-text { font-size: 0.97rem; line-height: 1.86; max-width: 64ch; }
+.about-text p + p { margin-top: 13px; }
+.about-text a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.about-text a:hover { border-bottom-color: var(--color-accent-light); }
+.research-interests { margin-top: 20px; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.research-interests li { font-size: 0.93rem; padding: 9px 16px; background: var(--color-tag-bg); border-radius: 8px; display: inline-flex; align-items: center; width: fit-content; border: 1px solid transparent; transition: border-color 0.2s; }
+.research-interests li:hover { border-color: var(--color-border); }
+.meta-line { margin-top: 22px; font-size: 0.91rem; color: var(--color-text-secondary); line-height: 1.85; }
+.meta-line strong { color: var(--color-text); }
+
+/* === EXPERIENCE === */
+.exp-category { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-text-secondary); margin: 34px 0 16px; padding-bottom: 7px; border-bottom: 1px solid var(--color-border); }
+.exp-category:first-of-type { margin-top: 0; }
+.exp-item { margin-bottom: 22px; padding-left: 16px; border-left: 2px solid var(--color-border); transition: border-color 0.2s ease; }
+.exp-item:hover { border-left-color: var(--color-accent); }
+.exp-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.exp-role { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; font-variation-settings: "opsz" 18; color: var(--color-text); letter-spacing: -0.01em; }
+.exp-period { font-size: 0.78rem; color: var(--color-text-secondary); white-space: nowrap; flex-shrink: 0; }
+.exp-org { font-size: 0.88rem; color: var(--color-accent); font-weight: 500; margin-top: 2px; }
+.exp-desc { font-size: 0.87rem; color: var(--color-text-secondary); margin-top: 6px; line-height: 1.66; max-width: 64ch; }
+
+/* === RESEARCH (by direction) === */
+.direction { margin-bottom: 42px; }
+.direction:last-child { margin-bottom: 0; }
+.direction-head { display: flex; gap: 15px; align-items: baseline; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border); }
+.direction-num { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; font-variation-settings: "opsz" 32; color: var(--color-accent); line-height: 1; flex-shrink: 0; }
+.direction-title { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; font-variation-settings: "opsz" 26; color: var(--color-text); letter-spacing: -0.01em; }
+.direction-desc { font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 2px; line-height: 1.5; }
+
+.pub-item { margin-bottom: 22px; padding-left: 18px; border-left: 2.5px solid var(--color-border); transition: border-color 0.2s ease; }
+.pub-item:hover { border-left-color: var(--color-accent); }
+.pub-title { font-weight: 600; font-size: 0.95rem; color: var(--color-text); line-height: 1.5; }
+.pub-venue { font-style: italic; color: var(--color-accent); font-size: 0.87rem; margin-top: 2px; }
+.pub-authors { font-size: 0.87rem; color: var(--color-text-secondary); margin-top: 3px; }
+.pub-authors .me { font-weight: 700; color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent-light); text-underline-offset: 2px; }
+.pub-authors a { color: var(--color-accent-light); text-decoration: none; }
+.item-desc { font-size: 0.86rem; color: var(--color-text-secondary); margin-top: 6px; line-height: 1.66; max-width: 64ch; }
+.project-chinese { font-size: 0.84rem; color: var(--color-text-secondary); margin-top: 2px; }
+
+/* type tags */
+.tag { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 7px; border-radius: 5px; margin-left: 8px; vertical-align: middle; white-space: nowrap; }
+.tag-paper { background: rgba(26,82,118,0.1); color: var(--color-accent); }
+.tag-working { background: var(--color-tag-bg); color: var(--color-text-secondary); border: 1px solid var(--color-border); }
+.tag-poster { background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border); }
+.tag-project { background: #f1eadb; color: #8a6d3b; border: 1px solid #e6dcc4; }
+
+/* === IMAGES: single figure === */
+.item-figure { margin-top: 12px; max-width: 440px; border: 1px solid var(--color-border); border-radius: 10px; overflow: hidden; background: var(--color-card-bg); position: relative; }
+.item-figure img { display: block; width: 100%; height: auto; }
+.item-figure figcaption { font-size: 0.78rem; color: var(--color-text-secondary); padding: 8px 12px; border-top: 1px solid var(--color-border); }
+.item-figure .ph-hint { display: none; }
+.item-figure.fig-missing { background: repeating-linear-gradient(45deg,#f7f5ef,#f7f5ef 10px,#f2efe7 10px,#f2efe7 20px); }
+.item-figure.fig-missing img { display: none; }
+.item-figure.fig-missing .ph-hint { display: flex; align-items: center; justify-content: center; min-height: 150px; font-family: ui-monospace, monospace; font-size: 0.72rem; color: var(--color-text-secondary); padding: 12px; text-align: center; }
+
+/* === IMAGES: gallery === */
+.research-gallery { margin-top: 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; max-width: 560px; }
+.research-gallery figure { position: relative; border: 1px solid var(--color-border); border-radius: 10px; overflow: hidden; background: var(--color-card-bg); }
+.research-gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.research-gallery figcaption { font-size: 0.73rem; color: var(--color-text-secondary); padding: 6px 9px; border-top: 1px solid var(--color-border); }
+.research-gallery .ph-hint { display: none; }
+.research-gallery figure.fig-missing { background: repeating-linear-gradient(45deg,#f7f5ef,#f7f5ef 10px,#f2efe7 10px,#f2efe7 20px); }
+.research-gallery figure.fig-missing img { display: none; }
+.research-gallery figure.fig-missing .ph-hint { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; font-family: ui-monospace, monospace; font-size: 0.68rem; color: var(--color-text-secondary); padding: 8px; text-align: center; }
+
+/* === TEACHING & AWARDS === */
+.subsection-title { font-family: var(--font-serif); font-size: 1.32rem; font-weight: 500; font-variation-settings: "opsz" 32; color: var(--color-text); margin-bottom: 8px; letter-spacing: -0.01em; }
+.subsection-divider { width: 100%; height: 1px; background: linear-gradient(to right, var(--color-accent) 0 28px, var(--color-border) 28px); margin-bottom: 22px; }
+.teaching-item { margin-bottom: 16px; padding-left: 16px; border-left: 2px solid var(--color-border); transition: border-color 0.2s ease; }
+.teaching-item:hover { border-left-color: var(--color-accent); }
+.teaching-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.teaching-course { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; font-variation-settings: "opsz" 18; color: var(--color-text); letter-spacing: -0.01em; }
+.teaching-period { font-size: 0.78rem; color: var(--color-text-secondary); white-space: nowrap; flex-shrink: 0; }
+.teaching-role { font-size: 0.88rem; color: var(--color-accent); font-weight: 500; margin-top: 2px; }
+.awards-section { margin-top: 44px; }
+.award-item { display: flex; justify-content: space-between; align-items: baseline; padding: 15px 20px; margin-bottom: 11px; background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.award-item:hover { border-color: var(--color-accent); box-shadow: var(--shadow-soft); transform: translateY(-1px); }
+.award-info { flex: 1; }
+.award-name { font-weight: 600; font-size: 0.95rem; color: var(--color-text); }
+.award-org { font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 2px; }
+.award-year { font-family: var(--font-serif); font-size: 0.95rem; font-weight: 500; color: var(--color-accent); flex-shrink: 0; margin-left: 16px; }
+
+/* === BLOG === */
+.blog-placeholder { text-align: center; padding: 64px 24px; color: var(--color-text-secondary); }
+.blog-placeholder p { font-size: 0.96rem; margin-bottom: 18px; }
+.blog-placeholder a { display: inline-block; padding: 9px 22px; font-size: 0.88rem; color: var(--color-accent); border: 1px solid var(--color-border); border-radius: 7px; text-decoration: none; font-weight: 500; transition: all 0.2s ease; }
+.blog-placeholder a:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+
+/* === FOOTER === */
+footer { max-width: var(--max-width); margin: 0 auto; padding: 30px 24px 48px; text-align: center; font-size: 0.82rem; color: var(--color-text-secondary); border-top: 1px solid var(--color-border); }
+footer a { color: var(--color-accent-light); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .hero { flex-direction: column; align-items: center; text-align: center; gap: 22px; padding-top: 40px; }
+  .hero-avatar { width: 116px; height: 116px; }
+  .hero-links { justify-content: center; }
+  .hero-info h1 { font-size: 1.85rem; }
+  .about-text { max-width: 100%; }
+  .research-interests li { width: 100%; }
+  .page-inner { padding: 8px 20px 52px; }
+  .award-item { flex-direction: column; gap: 4px; }
+  .award-year { margin-left: 0; }
+}
+
+/* === HAMBURGER === */
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--color-text); }
+.menu-toggle svg { width: 22px; height: 22px; }
+@media (max-width: 620px) {
+  .menu-toggle { display: block; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(250, 249, 245, 0.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); flex-direction: column; padding: 12px 24px 16px; border-bottom: 1px solid var(--color-border); gap: 2px; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 9px 12px; font-size: 0.88rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  .page-inner { animation: none; }
+  .news-body { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+<nav>
+<a class="nav-name" onclick="showPage('home')">Wang Shuo</a>
+<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div class="nav-links">
+<a onclick="showPage('home')" class="active" data-page="home">Home</a>
+<a onclick="showPage('experience')" data-page="experience">Experience</a>
+<a onclick="showPage('research')" data-page="research">Research</a>
+<a onclick="showPage('misc')" data-page="misc">Teaching & Awards</a>
+<a onclick="showPage('blog')" data-page="blog">Blog</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<img class="hero-avatar" src="profile.png" alt="Wang Shuo">
+<div class="hero-info">
+<h1>Wang Shuo (王硕)</h1>
+<p class="hero-tagline">Game Studies · Computational Social Science · Digital Humanities</p>
+<p class="hero-affiliation">
+M.S. @ <strong>National University of Singapore</strong><br>
+M.S. in AI (Online) @ <strong>University of Colorado Boulder</strong>
+</p>
+<div class="hero-links">
+<a href="mailto:shuowang@u.nus.edu">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+Email
+</a>
+<a href="WANG_Shuo_Academic_CV.pdf" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+CV
+</a>
+<a href="https://github.com/cheer-shuowang" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+GitHub
+</a>
+<a href="https://www.linkedin.com/in/shuo-wang-38038a3a3" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+LinkedIn
+</a>
+</div>
+</div>
+</div>
+
+<!-- ===== PAGE: HOME ===== -->
+<div class="page active" id="page-home">
+<div class="page-inner">
+<div class="home-grid">
+<div class="home-main">
+<h2 class="section-title">About</h2>
+<div class="section-divider"></div>
+<div class="about-text">
+<p>Hi! I'm Wang Shuo (王硕), you can also call me Allen. I'm an interdisciplinary researcher working at the intersection of <strong>Game Studies</strong>, <strong>Computational Social Science</strong>, and <strong>AI & Society</strong>. I use data-driven methods — NLP, machine learning, and agent-based modeling — to understand how digital communities shape identity, discourse, and public opinion.</p>
+<p>Currently, I'm a Master's student at the <a href="https://www.nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore (NUS)</a>, while concurrently pursuing an M.S. in Artificial Intelligence (Online) at the <a href="https://www.colorado.edu/" target="_blank" rel="noopener">University of Colorado Boulder</a>.</p>
+<p>Before academia, I worked as a product and strategy intern at <strong>Bilibili</strong>, <strong>Tencent</strong>, and <strong>Weibo</strong>, where I witnessed firsthand how algorithms and platform design shape user behavior — experiences that now fuel my research questions.</p>
+
+<p style="margin-top: 16px;">My research focuses on:</p>
+<ul class="research-interests">
+<li><strong>Game Studies</strong>&nbsp;— Player communities, identity politics, sentiment dynamics in live service games</li>
+<li><strong>AI & Society</strong>&nbsp;— Toxicity perception, content moderation, algorithmic influence on public discourse</li>
+<li><strong>Data Science</strong>&nbsp;— NLP pipelines, ML-based prediction, spatial-temporal modeling for urban analytics</li>
+</ul>
+
+<div class="meta-line">
+<strong>Technical:</strong> Python (NLP, ML, Data Analysis) · SQL · Stata · SPSS · GIS & Spatial Analysis · Git<br>
+<strong>Languages:</strong> Mandarin (native) · English (advanced) · Spanish (intermediate)
+</div>
+
+<p style="margin-top: 13px; font-size: 0.93rem; color: var(--color-text-secondary);">
+Outside of research, I enjoy traveling, playing the violin, and immersing myself in the virtual worlds of video games.
+</p>
+</div>
+</div>
+
+<aside class="home-aside">
+<div class="news-card">
+<div class="news-card-title">News</div>
+<ul class="news-list">
+<li><span class="news-date">Apr 2026</span> Two papers accepted in one day: <b>IC2S2 2026</b> (Parallel Talk, Burlington, Vermont 🇺🇸) and <b>SEASIA 2026</b> (NTU Singapore 🇸🇬).</li>
+<li><span class="news-date">Apr 2026</span> Paper accepted at <b>NLPercep @ ICWSM 2026</b> (Poster).</li>
+<li><span class="news-date">Feb 2026</span> First-author paper accepted by <b>DiGRA 2026</b>.</li>
+<li><span class="news-date">Nov 2025</span> Poster accepted at the <b>4th Frontiers of OR & AI Workshop</b>, Peking University (Shenzhen).</li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+</div>
+
+<!-- ===== PAGE: EXPERIENCE ===== -->
+<div class="page" id="page-experience">
+<div class="page-inner">
+<h2 class="section-title">Experience</h2>
+<div class="section-divider"></div>
+
+<div class="exp-category">Research</div>
+<!-- PLACEHOLDER — Yumeng Hou / CALM Lab. Update role, dates, and description when details arrive. -->
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Research Assistant</div><div class="exp-period">2025 – Present</div></div>
+<div class="exp-org">CALM Lab, National University of Singapore — advised by Prof. Yumeng Hou</div>
+<div class="exp-desc">[Placeholder] Contributing to two projects at the intersection of digital humanities and computational cultural heritage — details forthcoming.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Research Assistant</div><div class="exp-period">Apr – Oct 2025</div></div>
+<div class="exp-org">HKUST(Guangzhou) — PGSC Laboratory</div>
+<div class="exp-desc">Built structured databases of sustainability policies and carbon metrics for 20+ countries using Python and Pandas; developed automated statistical framework reducing data error rate from 32% to 8%.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Research Assistant</div><div class="exp-period">2023 – 2025</div></div>
+<div class="exp-org">Ocean University of China — Institute of Public Safety and Risk Governance</div>
+<div class="exp-desc">Developed ML-based risk analysis models for public safety scenarios using Python (Scikit-learn, XGBoost); built classification and prediction pipelines for risk assessment and early warning systems.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Research Assistant</div><div class="exp-period">May – Aug 2023</div></div>
+<div class="exp-org">CUFE — Sustainable Guidelines Research Center</div>
+<div class="exp-desc">Integrated 300+ county-level climate simulation datasets using Python and SQL; published 4 literature reviews on climate risk-food security nexus supporting two policy briefs.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Research Volunteer</div><div class="exp-period">Aug – Oct 2023</div></div>
+<div class="exp-org">Duke Kunshan University — Sustainable Development Laboratory</div>
+<div class="exp-desc">Processed 500+ infrared camera images identifying 12 wild animal species with 92% accuracy; mapped wildlife distribution via GIS tools, quantifying correlations between human activity and species presence.</div>
+</div>
+
+<div class="exp-category">Industry</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Strategy Product Intern</div><div class="exp-period">Apr – Jun 2025</div></div>
+<div class="exp-org">Bilibili — Data Strategy Group</div>
+<div class="exp-desc">Designed a behaviour-tagging system using SQL clustering to identify and segment high-value user cohorts; developed data-driven retention strategies to support subscription growth.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Product Planning Intern</div><div class="exp-period">Jul – Oct 2024</div></div>
+<div class="exp-org">Tencent — Interactive Entertainment Group</div>
+<div class="exp-desc">Led product planning for the in-game commerce system of <em>Delta Force</em>; coordinated cross-department compliance workflows and managed resource allocation through data dashboards.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">ACGN Operation Intern</div><div class="exp-period">Oct 2023 – Jun 2024</div></div>
+<div class="exp-org">Sina Weibo</div>
+<div class="exp-desc">Conducted behavioural analysis of ACGN communities to inform content operations strategy; coordinated development of an AI-assisted engagement tool to increase community activity.</div>
+</div>
+<div class="exp-item">
+<div class="exp-header"><div class="exp-role">Operation Intern</div><div class="exp-period">Jun – Sep 2023</div></div>
+<div class="exp-org">Hero Games — Nebula Business Unit</div>
+<div class="exp-desc">Reviewed game privacy policies for regulatory compliance; identified potential legal risks and coordinated cross-team resolution.</div>
+</div>
+</div>
+</div>
+
+<!-- ===== PAGE: RESEARCH (Publications + Projects, by direction) ===== -->
+<div class="page" id="page-research">
+<div class="page-inner">
+<h2 class="section-title">Research</h2>
+<div class="section-divider"></div>
+<p class="page-intro">My work spans three connected threads. Below, publications and projects are grouped by research direction; each entry is tagged by type — <em>Peer-Reviewed</em>, <em>Working Paper</em>, <em>Poster</em>, or <em>Project</em>. (* denotes corresponding author.)</p>
+
+<!-- ---------- DIRECTION I ---------- -->
+<div class="direction">
+<div class="direction-head">
+<span class="direction-num">I</span>
+<div>
+<div class="direction-title">Games, Communities & Identity</div>
+<div class="direction-desc">Player communities, identity politics, and sentiment dynamics in live-service and ACG game worlds.</div>
+</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Label Offensive and Defensive in Interest-Based Battlefields: Identity Politics and Public Opinion Polarization in China's ACG Communities<span class="tag tag-paper">Peer-Reviewed</span></div>
+<div class="pub-venue">Proceedings of DiGRA 2026 (Accepted)</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span></div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Who Decides What's Toxic? How Player Identity Shapes Social Perception of Toxicity in Online Game Communities<span class="tag tag-poster">Poster</span></div>
+<div class="pub-venue">NLPercep @ ICWSM 2026</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span>, Xue Wang*</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Governing Platform Entry: ASEAN States and the Politics of Chinese Esports Infrastructure<span class="tag tag-paper">Peer-Reviewed</span></div>
+<div class="pub-venue">SEASIA 2026 — 6th Consortium for Southeast Asian Studies in Asia Biennial Conference, NTU Singapore</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span>, Bin Yi Yang</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">"Dead Game Walking": Predicting Player Retention in Live Service Games from Community Sentiment Signals<span class="tag tag-working">Working Paper</span></div>
+<div class="pub-venue">Submitted to FDG 2026</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span>, Xue Wang*</div>
+<div class="item-desc">Modeling how shifts in community sentiment forecast churn across live-service titles.</div>
+<!-- IMAGE EXAMPLE — single figure. Add your file to images/ then update src/alt/caption. Delete this <figure> block if not needed. -->
+<figure class="item-figure">
+<img src="images/dead-game-retention.png" alt="Chart of community sentiment trend against player retention over time" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">Add image → images/dead-game-retention.png</span>
+<figcaption>Community sentiment signals vs. player retention (work in progress).</figcaption>
+</figure>
+</div>
+</div>
+
+<!-- ---------- DIRECTION II ---------- -->
+<div class="direction">
+<div class="direction-head">
+<span class="direction-num">II</span>
+<div>
+<div class="direction-title">Computational Social Science & Urban Analytics</div>
+<div class="direction-desc">Computational modeling of public opinion, collective behavior, and urban life — from LLM simulation and social-media analysis to spatial-temporal modeling.</div>
+</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Institutional Blame-Shifting, Cultural Context, and the Erosion of Collective Efficacy: A LLM-Based Simulation and Survey Approach<span class="tag tag-working">Working Paper</span></div>
+<div class="pub-venue">Under Review — <em>Social Networks</em> (1st Round)</div>
+<div class="pub-authors">Hongyang Zhang, Yu Lu Jin, <span class="me">Shuo Wang*</span></div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Generation, Evolution and Governance Mechanisms of Public Opinion Polarization in Public Emergencies<span class="tag tag-project">Project</span></div>
+<div class="project-chinese">突发公共事件舆情极化的生成演化与治理机制研究</div>
+<div class="pub-venue">Shandong Provincial Natural Science Foundation — Youth Project (Grant No. ZR2023QG090)</div>
+<div class="pub-authors">Participant</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Resilience Governance of Risks in Coastal Megacities under the Holistic National Security Perspective<span class="tag tag-project">Project</span></div>
+<div class="project-chinese">总体国家安全观下沿海特大城市风险的韧性治理研究</div>
+<div class="pub-venue">National Social Science Fund of China — Key Project (Grant No. 21AZZ014)</div>
+<div class="pub-authors">Participant · 2023 – 2025</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Alone in the Crowd? Urban Population Density and Loneliness Expression on Chinese Social Media<span class="tag tag-paper">Peer-Reviewed</span></div>
+<div class="pub-venue">IC2S2 2026 — Parallel Talk, Burlington, Vermont</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span>, Xue Wang*</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Spatiotemporal-Aware Precise Optimization of Bus Stop Layout in Aging Urban Districts: A Multi-Objective Model Driven by STGCN<span class="tag tag-poster">Poster</span></div>
+<div class="pub-venue">The 4th "Frontiers of OR & AI in Industry" Workshop, Peking University Shenzhen, 2025</div>
+<div class="pub-authors"><span class="me">Shuo Wang</span></div>
+</div>
+</div>
+
+<!-- ---------- DIRECTION III (PLACEHOLDER — Yumeng Hou / CALM Lab) ---------- -->
+<!-- Two project titles below are pre-filled from Yumeng Hou's site as a best guess. Overwrite title/role/description when you send details. -->
+<div class="direction">
+<div class="direction-head">
+<span class="direction-num">III</span>
+<div>
+<div class="direction-title">Digital Humanities &amp; Cultural Heritage</div>
+<div class="direction-desc">Computational curation and multimodal approaches to intangible cultural heritage — CALM Lab, National University of Singapore (advised by Prof. Yumeng Hou).</div>
+</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Embodied Forms: Collaborative Spatial Computing Frameworks for Craft Heritage in Singapore<span class="tag tag-project">Project</span></div>
+<div class="pub-venue">CALM Lab, NUS · Heritage Research Grant, National Heritage Board · advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a></div>
+<div class="pub-authors">Role &amp; contributions — <em>details forthcoming</em></div>
+<div class="item-desc">[Placeholder — replace with your role and a 1–2 sentence description of what you built.]</div>
+<!-- IMAGE SLOT — add files to images/, update src/alt/caption; delete figures you don't need -->
+<div class="research-gallery">
+<figure>
+<img src="images/yh-embodied-1.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">images/yh-embodied-1.jpg</span>
+<figcaption>Caption</figcaption>
+</figure>
+<figure>
+<img src="images/yh-embodied-2.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">images/yh-embodied-2.jpg</span>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">Playing Heaven: Remapping Early Modern Neo-Confucian Worlds with AI<span class="tag tag-project">Project</span></div>
+<div class="pub-venue">Part of the <a href="https://www.schmidtsciences.org/humanities-and-ai-virtual-institute/#modal-playing-heaven-remapping-early-modern-neo-confucian-worlds-with-ai" target="_blank" rel="noopener">Schmidt Sciences Humanities &amp; AI Virtual Institute (HAVI)</a>, 2025 · advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a> (NUS)</div>
+<div class="pub-authors">PIs: Javier Cha (HKU), Michael Chung (HKUST), Yumeng Hou &amp; Miguel Escobar Varela (NUS)</div>
+<div class="item-desc">An inter-university Hong Kong–Singapore project building <em>DeepPast</em>, a transformer-based AI research assistant for low-resource early-modern East Asian texts, to remap the intellectual history of Neo-Confucianism. [Your role &amp; contributions — details forthcoming.]</div>
+<figure class="item-figure">
+<img src="images/yh-playing-heaven.jpg" alt="" loading="lazy" onerror="this.closest('figure').classList.add('fig-missing')">
+<span class="ph-hint">Add image → images/yh-playing-heaven.jpg</span>
+<figcaption>Caption</figcaption>
+</figure>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ===== PAGE: TEACHING & AWARDS ===== -->
+<div class="page" id="page-misc">
+<div class="page-inner">
+<h2 class="subsection-title">Teaching</h2>
+<div class="subsection-divider"></div>
+<div class="teaching-item">
+<div class="teaching-header"><div class="teaching-course">Academic English</div><div class="teaching-period">Winter 2024</div></div>
+<div class="teaching-role">Teaching Assistant · Ocean University of China</div>
+</div>
+<div class="teaching-item">
+<div class="teaching-header"><div class="teaching-course">Logic</div><div class="teaching-period">Spring 2022</div></div>
+<div class="teaching-role">Teaching Assistant · Ocean University of China</div>
+</div>
+
+<div class="awards-section">
+<h2 class="subsection-title">Awards & Honors</h2>
+<div class="subsection-divider"></div>
+<div class="award-item">
+<div class="award-info"><div class="award-name">Outstanding Graduate</div><div class="award-org">Ocean University of China</div></div>
+<div class="award-year">2025</div>
+</div>
+<div class="award-item">
+<div class="award-info"><div class="award-name">Chuying Excellence Scholarship (储英卓越奖学金)</div><div class="award-org">Ocean University of China</div></div>
+<div class="award-year">2024</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== PAGE: BLOG ===== -->
+<div class="page" id="page-blog">
+<div class="page-inner">
+<h2 class="section-title">Blog</h2>
+<div class="section-divider"></div>
+<div class="blog-placeholder">
+<p>Writing is on its way. Stay tuned.</p>
+<!-- TODO: Replace '#' with your Substack URL once ready -->
+<!--
+<a href="#" target="_blank" rel="noopener">Read on Substack</a>
+-->
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2026 Wang Shuo · Deployed on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+</footer>
+
+<script>
+function showPage(pageId) {
+document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+const target = document.getElementById('page-' + pageId);
+if (target) {
+target.classList.add('active');
+const inner = target.querySelector('.page-inner');
+if (inner) { inner.style.animation = 'none'; inner.offsetHeight; inner.style.animation = ''; }
+}
+document.querySelectorAll('.nav-links a').forEach(a => {
+a.classList.toggle('active', a.dataset.page === pageId);
+});
+closeMenu();
+if (history.replaceState) history.replaceState(null, '', '#' + pageId);
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleNews(label) {
+label.classList.toggle('collapsed');
+document.getElementById('news-body').classList.toggle('collapsed');
+}
+
+function toggleMenu() {
+const links = document.querySelector('.nav-links');
+const open = links.classList.toggle('open');
+document.getElementById('menuToggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMenu() {
+document.querySelector('.nav-links').classList.remove('open');
+document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
+}
+
+// open the right page if the URL has a hash (shareable links)
+(function () {
+const valid = ['home','experience','research','misc','blog'];
+const id = (location.hash || '').replace('#','');
+if (valid.includes(id) && id !== 'home') showPage(id);
+})();
+</script>
+</body>
+</html>
