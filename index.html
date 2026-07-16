@@ -285,6 +285,34 @@ footer a:hover { text-decoration: underline; }
   .page-inner { animation: none; }
   .news-body { transition: none; }
 }
+/* === RESEARCH: direction cards (overview) === */
+.dir-cards { display: grid; gap: 15px; margin-top: 6px; }
+.dir-card { display: block; width: 100%; text-align: left; background: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: 12px; padding: 20px 24px; cursor: pointer; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.dir-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+.dir-card-top { display: flex; align-items: baseline; gap: 10px; }
+.dir-card-num { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--color-accent); }
+.dir-card-title { font-family: var(--font-serif); font-size: 1.28rem; font-weight: 600; letter-spacing: -0.015em; flex: 1; }
+.dir-card-arrow { color: var(--color-accent); font-size: 1.1rem; transition: transform .2s; }
+.dir-card:hover .dir-card-arrow { transform: translateX(4px); }
+.dir-card-desc { font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.6; margin-top: 6px; }
+.dir-card-topics { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.dir-card-topics span { font-size: 0.7rem; color: var(--color-text-secondary); background: var(--color-tag-bg); border-radius: 5px; padding: 2px 8px; }
+
+/* === RESEARCH: back link, direction lead, read-more, detail pages === */
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; font-weight: 500; color: var(--color-accent); cursor: pointer; text-decoration: none; margin-bottom: 16px; transition: gap .2s; }
+.back-link:hover { gap: 10px; }
+.dir-lead { font-size: 0.96rem; line-height: 1.8; color: var(--color-text); max-width: 64ch; margin-bottom: 26px; }
+.read-more { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; font-size: 0.83rem; font-weight: 500; color: var(--color-accent); cursor: pointer; text-decoration: none; transition: gap .2s; }
+.read-more:hover { gap: 9px; }
+.detail-meta { font-size: 0.87rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 20px; }
+.detail-meta a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; }
+.detail-meta a:hover { border-bottom-color: var(--color-accent-light); }
+.detail-body { font-size: 0.95rem; line-height: 1.8; color: var(--color-text); max-width: 64ch; }
+.detail-body p + p { margin-top: 13px; }
+.detail-body h3 { font-family: var(--font-serif); font-size: 1.08rem; font-weight: 600; color: var(--color-text); margin: 24px 0 8px; letter-spacing: -0.01em; }
+.detail-body a { color: var(--color-accent-light); text-decoration: none; border-bottom: 1px solid transparent; }
+.detail-body a:hover { border-bottom-color: var(--color-accent-light); }
+
 </style>
 </head>
 <body>
@@ -439,22 +467,40 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 </div>
 </div>
 
-<!-- ===== PAGE: RESEARCH (Publications + Projects, by direction) ===== -->
+<!-- ===== PAGE: RESEARCH (overview → direction cards) ===== -->
 <div class="page" id="page-research">
 <div class="page-inner">
 <h2 class="section-title">Research</h2>
 <div class="section-divider"></div>
-<p class="page-intro">Across games, public life, and cultural heritage, my research asks one question: how do people — as communities, publics, and cultures — make meaning and act together in a digital age? A shared computational toolkit runs through all of it: NLP and text mining, machine learning, and agent- and LLM-based simulation. The three threads below are windows onto that single problem of collective behavior, grouped by domain and tagged by type — <em>Peer-Reviewed</em>, <em>Working Paper</em>, <em>Poster</em>, <em>Project</em>, or <em>Thesis</em>. (* denotes corresponding author.)</p>
+<p class="page-intro">Across games, public life, and cultural heritage, my research asks one question: how do people — as communities, publics, and cultures — make meaning and act together in a digital age? A shared computational toolkit runs through all of it: NLP and text mining, machine learning, and agent- and LLM-based simulation. Explore each thread below.</p>
+<div class="dir-cards">
+<a class="dir-card" onclick="showPage('dir-games')">
+<div class="dir-card-top"><span class="dir-card-num">I</span><span class="dir-card-title">Games, Communities &amp; Identity</span><span class="dir-card-arrow">→</span></div>
+<div class="dir-card-desc">Player communities, identity politics, and sentiment dynamics in live-service and ACG game worlds — including the algorithmic labor market of esports.</div>
+<div class="dir-card-topics"><span>ACG identity</span><span>toxicity perception</span><span>esports labor</span></div>
+</a>
+<a class="dir-card" onclick="showPage('dir-opinion')">
+<div class="dir-card-top"><span class="dir-card-num">II</span><span class="dir-card-title">Public Opinion, Risk &amp; Urban Society</span><span class="dir-card-arrow">→</span></div>
+<div class="dir-card-desc">How Chinese publics and cities behave under stress and in everyday life — opinion polarization, crisis and risk governance, and the social fabric of urban space.</div>
+<div class="dir-card-topics"><span>polarization</span><span>crisis governance</span><span>urban CSS</span></div>
+</a>
+<a class="dir-card" onclick="showPage('dir-dh')">
+<div class="dir-card-top"><span class="dir-card-num">III</span><span class="dir-card-title">Digital Humanities &amp; Cultural Heritage</span><span class="dir-card-arrow">→</span></div>
+<div class="dir-card-desc">Computational curation and multimodal AI approaches to historical and cultural texts, developed at the CALM Lab, NUS.</div>
+<div class="dir-card-topics"><span>computational heritage</span><span>Neo-Confucian AI</span><span>VLM pipelines</span></div>
+</a>
+</div>
+<p class="page-intro" style="margin-top:26px;font-size:0.86rem;">Entries are tagged by type — <em>Peer-Reviewed</em>, <em>Working Paper</em>, <em>Poster</em>, <em>Project</em>, or <em>Thesis</em>. (* denotes corresponding author.)</p>
+</div>
+</div>
 
-<!-- ---------- DIRECTION I ---------- -->
-<div class="direction">
-<div class="direction-head">
-<span class="direction-num">I</span>
-<div>
-<div class="direction-title">Games, Communities & Identity</div>
-<div class="direction-desc">Player communities, identity politics, and sentiment dynamics in live-service and ACG game worlds.</div>
-</div>
-</div>
+<!-- ===== PAGE: DIRECTION I — Games ===== -->
+<div class="page" id="page-dir-games">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('research')">← Research</a>
+<h2 class="section-title">Games, Communities &amp; Identity</h2>
+<div class="section-divider"></div>
+<p class="dir-lead">Games are where I first watched data become identity. This thread studies how players form communities and contest belonging — how toxicity is perceived differently by different groups, how ACG fandoms polarize around interest-based identities, and how the esports industry turns raw performance data into a labor market. Methods span NLP, sentiment analysis, and quantitative modeling of player behavior.</p>
 
 <div class="pub-item">
 <div class="pub-title">Label Offensive and Defensive in Interest-Based Battlefields: Identity Politics and Public Opinion Polarization in China's ACG Communities<span class="tag tag-paper">Peer-Reviewed</span></div>
@@ -476,21 +522,20 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 
 <div class="pub-item">
 <div class="pub-title">Algorithmic Selection and Value Alienation in the Esports Labor Market: A Study of Digital Meritocracy<span class="tag tag-project">Project</span></div>
-<div class="pub-venue">In progress</div>
-<div class="pub-authors">Participant · with Runyi Ma and Yining Fang</div>
-<div class="item-desc">How algorithmic ranking ("digital meritocracy") governs entry, selection, and valuation in the professional League of Legends labor market, and whether it drives "digital alienation" — via multi-source scraping, logistic regression, and survival analysis.</div>
+<div class="pub-venue">In progress · Participant, with Runyi Ma and Yining Fang</div>
+<div class="item-desc">Whether the ladder-rank "digital meritocracy" of esports delivers fairer entry into the profession — or a colder, more extractive cage.</div>
+<a class="read-more" onclick="event.stopPropagation(); showPage('proj-esports')">Read the full project →</a>
+</div>
 </div>
 </div>
 
-<!-- ---------- DIRECTION II ---------- -->
-<div class="direction">
-<div class="direction-head">
-<span class="direction-num">II</span>
-<div>
-<div class="direction-title">Public Opinion, Risk & Urban Society</div>
-<div class="direction-desc">How Chinese publics and cities behave under stress and in everyday life — opinion polarization, crisis and risk governance, and the social fabric of urban space — read through text mining, LLM simulation, and spatial modeling.</div>
-</div>
-</div>
+<!-- ===== PAGE: DIRECTION II — Public Opinion, Risk & Urban Society ===== -->
+<div class="page" id="page-dir-opinion">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('research')">← Research</a>
+<h2 class="section-title">Public Opinion, Risk &amp; Urban Society</h2>
+<div class="section-divider"></div>
+<p class="dir-lead">This thread follows collective life in China under stress and in the everyday — how publics form and polarize opinion, how institutions and cities absorb crisis and risk, and how urban space shapes social experience. The tools are computational: LDA text mining, LLM-based simulation, social-media analysis, and spatial-temporal modeling.</p>
 
 <div class="pub-item">
 <div class="pub-title">Institutional Blame-Shifting, Cultural Context, and the Erosion of Collective Efficacy: A LLM-Based Simulation and Survey Approach<span class="tag tag-working">Working Paper</span></div>
@@ -510,12 +555,12 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 <div class="pub-authors">Participant · 2023 – 2025</div>
 </div>
 
-<!-- Undergraduate thesis — title below is drafted from the abstract; confirm the official title, add advisor, and verify year. -->
 <div class="pub-item">
 <div class="pub-title">Institution, Context, and Action: A Text-Mining Analysis of Crisis Evolution in China's Major Disaster Accidents (2010–2025)<span class="tag tag-thesis">Bachelor's Thesis</span></div>
 <div class="pub-venue">Undergraduate Thesis · Ocean University of China · advised by <a href="http://siapa.ouc.edu.cn/2021/0827/c18282a344995/page.htm" target="_blank" rel="noopener">Xue Wang</a> · 2025</div>
 <div class="pub-authors"><span class="me">Shuo Wang</span></div>
-<div class="item-desc">LDA topic modeling of 30 major-disaster investigation reports (2010–2025) from China's Ministry of Emergency Management, building an "institution–context–action" framework of crisis evolution.</div>
+<div class="item-desc">An "institution–context–action" framework of crisis evolution, from LDA topic modeling of 30 national disaster-investigation reports.</div>
+<a class="read-more" onclick="event.stopPropagation(); showPage('proj-thesis')">Read the full thesis summary →</a>
 </div>
 
 <div class="pub-item">
@@ -530,23 +575,63 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 <div class="pub-authors"><span class="me">Shuo Wang</span></div>
 </div>
 </div>
+</div>
 
-<!-- ---------- DIRECTION III (PLACEHOLDER — Yumeng Hou / CALM Lab) ---------- -->
-<!-- Two project titles below are pre-filled from Yumeng Hou's site as a best guess. Overwrite title/role/description when you send details. -->
-<div class="direction">
-<div class="direction-head">
-<span class="direction-num">III</span>
-<div>
-<div class="direction-title">Digital Humanities &amp; Cultural Heritage</div>
-<div class="direction-desc">Computational curation and multimodal approaches to intangible cultural heritage — CALM Lab, National University of Singapore (advised by Prof. Yumeng Hou).</div>
-</div>
-</div>
+<!-- ===== PAGE: DIRECTION III — Digital Humanities ===== -->
+<div class="page" id="page-dir-dh">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('research')">← Research</a>
+<h2 class="section-title">Digital Humanities &amp; Cultural Heritage</h2>
+<div class="section-divider"></div>
+<p class="dir-lead">At the CALM Lab, NUS (advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener" class="read-more" style="display:inline;margin:0;">Yumeng Hou</a>), I bring computational and multimodal-AI methods to historical and cultural texts — building the datasets and models that let humanists ask new questions of old sources.</p>
 
 <div class="pub-item">
 <div class="pub-title">Playing Heaven: Remapping Early Modern Neo-Confucian Worlds with AI<span class="tag tag-project">Project</span></div>
 <div class="pub-venue">Part of the <a href="https://www.schmidtsciences.org/humanities-and-ai-virtual-institute/#modal-playing-heaven-remapping-early-modern-neo-confucian-worlds-with-ai" target="_blank" rel="noopener">Schmidt Sciences Humanities &amp; AI Virtual Institute (HAVI)</a>, 2025 · advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a> (NUS)</div>
-<div class="pub-authors">PIs: Javier Cha (HKU), Michael Chung (HKUST), Yumeng Hou &amp; Miguel Escobar Varela (NUS)</div>
-<div class="item-desc">An inter-university Hong Kong–Singapore project building <em>DeepPast</em>, a transformer-based AI research assistant for low-resource early-modern East Asian texts, to remap the intellectual history of Neo-Confucianism. My work spans two parts:</div>
+<div class="item-desc">Building <em>DeepPast</em>, an AI research assistant for low-resource early-modern East Asian texts. My work spans a VLM-based dataset-construction pipeline and a study of semantic change.</div>
+<a class="read-more" onclick="event.stopPropagation(); showPage('proj-playingheaven')">Read the full project →</a>
+</div>
+
+<div class="pub-item">
+<div class="pub-title">A Computational Semantic Analysis of the "Neo-Confucianization" of Wang Yangming's Military Discourse<span class="tag tag-working">Working Paper</span></div>
+<div class="pub-venue">In preparation · within the Playing Heaven project</div>
+<div class="item-desc">Contextualized embeddings (SikuRoBERTa) + representational similarity analysis over an 18-source corpus show that Neo-Confucian uptake in military and martial-arts writing was selective: confined to moral-cosmological concepts and the literati register, with a Qing-stage "embodiment" turn of 氣 and 心.</div>
+</div>
+</div>
+</div>
+
+<!-- ===== DETAIL PAGE: Esports labor market ===== -->
+<div class="page" id="page-proj-esports">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('dir-games')">← Games, Communities &amp; Identity</a>
+<h2 class="section-title">Algorithmic Selection and Value Alienation in the Esports Labor Market</h2>
+<div class="section-divider"></div>
+<div class="detail-meta"><span class="tag tag-project">Project</span> &nbsp;·&nbsp; In progress &nbsp;·&nbsp; Participant, with Runyi Ma and Yining Fang</div>
+<div class="detail-body">
+<p>In esports, data is not a description of the player — it is the player's "digital body." Entry into the professional labor market runs not through a résumé but through high-frequency, real-time signals: ladder rank, win rate, and MMR/ELO. This project asks whether that algorithmic "digital meritocracy" delivers a fairer path into the profession, or builds a colder, more extractive cage around it.</p>
+<h3>Questions</h3>
+<p>We separate three often-conflated processes — <em>entry</em> (eligibility to turn professional), <em>selection</em> (which team, what contract), and <em>promotion</em> (from rookie to established veteran) — and trace how a player's "value" migrates from pure competitive productivity into commercial worth: transfers, endorsements, streaming. We then ask whether the system produces "digital alienation" — career burnout, and an "algorithmic lock-in" in which one major dip in the data forecloses future opportunities even when the player has not physically declined.</p>
+<h3>Approach</h3>
+<p>We build digital portraits of roughly 100 professional League of Legends players (newcomers vs. veterans) from multi-source public data — Leaguepedia, Liquipedia, OP.GG, Esports Earnings. Logistic regression tests the ladder-percentile threshold for entry; linear models link in-game KPIs to market value; and survival analysis (Kaplan–Meier) estimates career "half-life" and lock-in effects.</p>
+<h3>Output</h3>
+<p>An empirically grounded "digital-meritocracy" evaluation index, a working paper on algorithmic discipline and value alienation in the esports labor market, and policy proposals — such as a "human margin" and "dynamic fault-tolerance" — to keep automated selection from hardening into a data-only regime.</p>
+</div>
+</div>
+</div>
+
+<!-- ===== DETAIL PAGE: Playing Heaven ===== -->
+<div class="page" id="page-proj-playingheaven">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('dir-dh')">← Digital Humanities &amp; Cultural Heritage</a>
+<h2 class="section-title">Playing Heaven: Remapping Early Modern Neo-Confucian Worlds with AI</h2>
+<div class="section-divider"></div>
+<div class="detail-meta">
+<span class="tag tag-project">Project</span> &nbsp;·&nbsp; Part of the <a href="https://www.schmidtsciences.org/humanities-and-ai-virtual-institute/#modal-playing-heaven-remapping-early-modern-neo-confucian-worlds-with-ai" target="_blank" rel="noopener">Schmidt Sciences Humanities &amp; AI Virtual Institute (HAVI)</a>, 2025<br>
+Advised by Prof. <a href="https://yumenghou.com/" target="_blank" rel="noopener">Yumeng Hou</a> (NUS) &nbsp;·&nbsp; PIs: Javier Cha (HKU), Michael Chung (HKUST), Yumeng Hou &amp; Miguel Escobar Varela (NUS)
+</div>
+<div class="detail-body">
+<p>An inter-university Hong Kong–Singapore project building <em>DeepPast</em>, a transformer-based AI research assistant for low-resource early-modern East Asian texts, to remap the intellectual history of Neo-Confucianism. My contribution spans two workstreams.</p>
+</div>
 <div class="workstreams">
 <div class="workstream">
 <div class="ws-label">Dataset Construction</div>
@@ -554,7 +639,7 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 </div>
 <div class="workstream">
 <div class="ws-label">Semantic Change</div>
-<div class="ws-desc">Modeling how the meanings of key philosophical concepts shifted across early-modern Neo-Confucian texts. [Details forthcoming — send specifics and I'll refine.]</div>
+<div class="ws-desc">A computational semantic analysis of the "Neo-Confucianization" of Wang Yangming's military discourse. Using contextualized embeddings (SikuRoBERTa) with representational similarity analysis and baseline subtraction over an 18-source corpus (3rd century – Qing; five registers, from Sunzi commentaries to martial-arts treatises), we track eight core concepts (形, 勢, 心, 氣, 正, 奇, 虛, 實) along diachronic and synchronic axes. Findings: the Neo-Confucian uptake is <em>selective</em> — confined to moral-cosmological concepts and the literati register, absent from tactical vocabulary — and 氣/心 undergo a sharp "embodiment" turn at the Qing martial-arts stage. Working paper in preparation.</div>
 </div>
 </div>
 <!-- IMAGE SLOT — add files to images/, update src/alt/caption; delete figures you don't need -->
@@ -573,6 +658,20 @@ Outside of research, I enjoy traveling, playing the violin, and immersing myself
 </div>
 </div>
 
+<!-- ===== DETAIL PAGE: Bachelor's thesis ===== -->
+<div class="page" id="page-proj-thesis">
+<div class="page-inner">
+<a class="back-link" onclick="showPage('dir-opinion')">← Public Opinion, Risk &amp; Urban Society</a>
+<h2 class="section-title">Institution, Context, and Action: Crisis Evolution in China's Major Disaster Accidents</h2>
+<div class="section-divider"></div>
+<div class="detail-meta"><span class="tag tag-thesis">Bachelor's Thesis</span> &nbsp;·&nbsp; Ocean University of China &nbsp;·&nbsp; advised by <a href="http://siapa.ouc.edu.cn/2021/0827/c18282a344995/page.htm" target="_blank" rel="noopener">Xue Wang</a> &nbsp;·&nbsp; 2025</div>
+<div class="detail-body">
+<p>Existing disaster research tends to isolate single factors. This thesis instead builds a three-dimensional "institution–context–action" framework to explain how crises evolve, applying LDA topic modeling to 30 major-disaster investigation reports released by China's Ministry of Emergency Management (2010–2025), combined with case studies.</p>
+<h3>Three dimensions</h3>
+<p><strong>Institutional factors</strong> form a "systemic risk chain" through pre-event monitoring gaps, mid-event coordination failures, and post-event accountability softening — exemplified by the 2015 Tianjin Port explosion. <strong>Contextual factors</strong> amplify impact through natural vulnerability and social sensitivity, as in the 2021 Zhengzhou "7·20" rainstorm. <strong>Action factors</strong> — bureaucratic inertia, under-investment in safety, and weak public risk awareness — drove failures such as the 2019 Xiangshui chemical explosion.</p>
+<h3>Contribution</h3>
+<p>Integrating quantitative text mining with qualitative case analysis, the thesis argues that institutional defects define the baseline of prevention, contextual vulnerabilities shape the paths of risk transmission, and action biases move the threshold of loss-of-control — and derives full-cycle resilience-governance implications across all three levels.</p>
+</div>
 </div>
 </div>
 
@@ -620,7 +719,8 @@ const inner = target.querySelector('.page-inner');
 if (inner) { inner.style.animation = 'none'; inner.offsetHeight; inner.style.animation = ''; }
 }
 document.querySelectorAll('.nav-links a').forEach(a => {
-a.classList.toggle('active', a.dataset.page === pageId);
+const navId = (pageId.startsWith('dir-') || pageId.startsWith('proj-')) ? 'research' : pageId;
+a.classList.toggle('active', a.dataset.page === navId);
 });
 closeMenu();
 if (history.replaceState) history.replaceState(null, '', '#' + pageId);
@@ -644,7 +744,7 @@ document.getElementById('menuToggle').setAttribute('aria-expanded', 'false');
 
 // open the right page if the URL has a hash (shareable links)
 (function () {
-const valid = ['home','experience','research','misc'];
+const valid = ['home','experience','research','misc','dir-games','dir-opinion','dir-dh','proj-esports','proj-playingheaven','proj-thesis'];
 const id = (location.hash || '').replace('#','');
 if (valid.includes(id) && id !== 'home') showPage(id);
 })();
