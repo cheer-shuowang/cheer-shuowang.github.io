@@ -2,264 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.classList.add("js");</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shuo Wang (王硕)</title>
 <meta name="description" content="Shuo Wang (王硕) — M.S. candidate at the National University of Singapore, working across human–computer interaction, computational social science, and the digital humanities.">
 <meta property="og:title" content="Shuo Wang (王硕)">
 <meta property="og:description" content="Human–Computer Interaction · Computational Social Science · Digital Humanities">
 <meta property="og:type" content="profile">
-<meta property="og:image" content="profile.png">
+<meta property="og:image" content="https://cheer-shuowang.github.io/profile.png">
+<meta name="theme-color" content="#f7f8fa">
+<link rel="canonical" href="https://cheer-shuowang.github.io/">
 <meta property="og:url" content="https://cheer-shuowang.github.io/">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Space+Mono:wght@400;700&display=swap');
-
-:root{
-  --bg:#FBFBFC;
-  --bg-2:#F2F4F7;
-  --ink:#17191E;
-  --muted:#5B616B;
-  --line:#E4E7EC;
-  --accent:#2D5BA0;
-  --accent-2:#3F72BE;
-  --dark:#141821;
-  --maxw:1080px;
-  --pad:clamp(20px,5vw,64px);
-  --serif:"Newsreader",Georgia,serif;
-  --display:"Fraunces","Newsreader",Georgia,serif;
-  --mono:"Space Mono",ui-monospace,monospace;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font-family:var(--serif);font-size:18px;line-height:1.6;
-  font-weight:400;-webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-img{max-width:100%;display:block}
-
-/* ---------- Utility ---------- */
-.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
-.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-
-/* axis divider — the signature: an effect-plot line with a plotted point */
-.axis{position:relative;height:1px;background:var(--line);margin:0}
-.axis::after{content:"";position:absolute;top:50%;left:var(--pos,50%);
-  width:9px;height:9px;border-radius:50%;background:var(--accent-2);
-  transform:translate(-50%,-50%);box-shadow:0 0 0 4px var(--bg)}
-
-/* ---------- Nav ---------- */
-.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px var(--pad);
-  display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
-.brand .cn{opacity:.55}
-.nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-.nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;
-  text-decoration:none;color:var(--muted);padding:4px 0;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--accent);transition:width .25s ease}
-.nav-links a:hover{color:var(--ink)}
-.nav-links a:hover::after{width:100%}
-.nav-links a.active{color:var(--ink)}
-.nav-links a.active::after{width:100%}
-.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:2px;
-  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:7px 12px;cursor:pointer;color:var(--ink)}
-
-/* ---------- Hero ---------- */
-.hero{padding:clamp(48px,9vw,110px) 0 clamp(40px,6vw,72px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(200px,24vw,280px);
-  gap:clamp(28px,5vw,60px);align-items:start}
-.hero-photo{margin:0}
-.hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;
-  border:1px solid var(--line);background:var(--bg-2);display:block}
-.hero-photo figcaption{margin-top:10px;font-family:var(--mono);font-size:.62rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.doc-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  color:var(--muted);margin-bottom:clamp(28px,6vw,54px)}
-.hero h1{font-family:var(--display);font-weight:600;line-height:.98;
-  font-size:clamp(2.6rem,6.6vw,5rem);letter-spacing:-.02em;margin:0 0 .12em;
-  font-optical-sizing:auto}
-.hero h1 .cn{font-weight:400;font-size:.42em;letter-spacing:0;color:var(--muted);
-  vertical-align:baseline;margin-left:.28em;white-space:nowrap}
-.tagline{font-family:var(--mono);font-size:clamp(.7rem,1.6vw,.82rem);letter-spacing:.16em;
-  text-transform:uppercase;color:var(--accent);margin:.2em 0 1.5em;line-height:1.9}
-.lede{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.42;
-  font-weight:400;max-width:42ch;margin:0 0 1.6em}
-.lede em{font-style:italic;color:var(--accent)}
-.hero-links{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
-.pill{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:2px;
-  padding:8px 13px;transition:border-color .2s,background .2s}
-.pill:hover{border-color:var(--accent);background:var(--bg-2)}
-.pill.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.pill.solid:hover{background:var(--accent);border-color:var(--accent)}
-
-/* ---------- Section scaffold ---------- */
-section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
-#contact{scroll-margin-top:72px}
-.sec-label{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(24px,4vw,40px)}
-.sec-label h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,4.2vw,2.7rem);
-  letter-spacing:-.015em;margin:0;line-height:1}
-.sec-num{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--accent);white-space:nowrap}
-
-/* ---------- About ---------- */
-.about-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
-.about-body p{margin:0 0 1.1em;max-width:60ch}
-.about-body p:last-child{margin-bottom:0}
-.about-body .name-note{color:var(--muted)}
-.focus{border-top:1px solid var(--line)}
-.focus li{list-style:none}
-.focus ul{margin:0;padding:0}
-.focus .row{padding:16px 0;border-bottom:1px solid var(--line)}
-.focus .row .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:5px}
-.focus .row .v{font-size:.98rem;line-height:1.45}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
-.chip{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:5px 11px}
-
-/* ---------- News ---------- */
-.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.news-list li{display:grid;grid-template-columns:120px 1fr;gap:18px;
-  padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.news-list .date{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-.news-list .what{font-size:1rem;line-height:1.45}
-.news-list strong{font-weight:600}
-
-/* ---------- Research threads ---------- */
-.thread{padding:clamp(30px,4vw,44px) 0;border-top:1px solid var(--line)}
-.thread:first-of-type{border-top:none}
-.thread-head{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;margin-bottom:26px}
-.thread-rn{font-family:var(--display);font-weight:600;font-size:2.4rem;line-height:.8;color:var(--accent);font-style:italic}
-.thread-head h3{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,1.9rem);
-  letter-spacing:-.01em;margin:0 0 .35em;line-height:1.05}
-.thread-head p{margin:0 0 .7em;color:var(--muted);max-width:62ch;font-size:1rem;line-height:1.5}
-.thread-tags{display:flex;flex-wrap:wrap;gap:6px}
-.thread-tags .chip{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
-.works{list-style:none;margin:0;padding:0;grid-column:2}
-.work{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:14px 0;border-top:1px dotted var(--line)}
-.work:first-child{border-top:1px solid var(--line)}
-.work .dot{margin-top:.55em;width:7px;height:7px;border-radius:50%;background:var(--accent-2);justify-self:center}
-.work .title{font-size:1.04rem;line-height:1.35;font-weight:500;margin:0 0 3px}
-.work .meta{font-size:.86rem;color:var(--muted);line-height:1.4}
-.work .meta .venue{font-style:italic}
-.badge{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.09em;
-  text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-right:8px;
-  vertical-align:.12em;border:1px solid var(--line);color:var(--muted)}
-.badge.pr{background:color-mix(in srgb,var(--accent) 14%,var(--bg));
-  border-color:color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent)}
-.badge.rev{background:color-mix(in srgb,#B4703A 13%,var(--bg));border-color:#CDA97E;color:#8A5A2B}
-.badge.soon{background:#E7F1EA;border-color:#A9CDB5;color:#3B6B4E}
-
-/* content links */
-.about-body a,.thread-head p a,.work .meta a,.xp li a,.foot p a{
-  color:var(--accent);text-decoration:none;
-  border-bottom:1px solid color-mix(in srgb,var(--accent) 32%,transparent);
-  transition:border-color .2s}
-.about-body a:hover,.thread-head p a:hover,.work .meta a:hover,.xp li a:hover,.foot p a:hover{border-bottom-color:var(--accent)}
-.codelink{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:none!important;white-space:nowrap}
-
-/* project figures */
-.fig{margin:14px 0 2px}
-.fig img{max-width:min(100%,680px)}
-.fig img,.fig-row img{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:var(--bg-2)}
-.fig figcaption,.fig-row figcaption{margin-top:7px;font-size:.82rem;line-height:1.4;color:var(--muted);font-style:italic}
-.fig-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 2px}
-.fig-row figure{margin:0}
-/* inline content links */
-.lnk{color:var(--accent);text-decoration:none;
-  border-bottom:1px solid color-mix(in srgb,var(--accent) 32%,transparent);
-  transition:border-color .2s,color .2s}
-.lnk:hover{border-bottom-color:var(--accent);color:var(--accent-2)}
-/* project figure strip */
-.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:12px;margin-top:14px}
-.figs figure{margin:0}
-.figs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
-  border:1px solid var(--line);border-radius:3px;background:var(--bg-2)}
-.figs figcaption{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--muted);margin-top:7px;line-height:1.45}
-
-/* ---------- Experience ---------- */
-.xp-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px)}
-.xp h3.col-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);margin:0 0 6px;font-weight:700}
-.xp .col-note{color:var(--muted);font-size:.9rem;margin:0 0 16px;line-height:1.45}
-.xp ul{list-style:none;margin:0;padding:0}
-.xp li{padding:14px 0;border-top:1px solid var(--line)}
-.xp .role{font-weight:600;font-size:1rem;line-height:1.3;display:block}
-.xp .org{color:var(--muted);font-size:.92rem;display:block;margin-top:1px}
-.xp .when{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin:2px 0 5px}
-.xp .desc{font-size:.9rem;color:var(--muted);line-height:1.45}
-.xp li.with-logo{display:flex;gap:14px;align-items:flex-start}
-.logo{position:relative;flex:0 0 46px;width:46px;height:46px;border:1px solid var(--line);
-  border-radius:9px;background:var(--bg-2);overflow:hidden;display:grid;place-items:center;margin-top:4px}
-.logo .lf{font-family:var(--display);font-weight:600;font-size:1.15rem;color:var(--muted)}
-.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:7px;background:#fff}
-.entry-body{flex:1;min-width:0}
-.xp-item{display:grid;grid-template-columns:36px 1fr;gap:13px;align-items:start}
-.logo{width:36px;height:36px;border:1px solid var(--line);border-radius:7px;background:#fff;position:relative;overflow:hidden;margin-top:3px}
-.logo::before{content:attr(data-initial);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--muted)}
-.logo img{position:relative;width:100%;height:100%;object-fit:contain;padding:5px;background:#fff}
-
-/* ---------- Teaching & awards ---------- */
-.ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px)}
-.ta h3.col-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;font-weight:700}
-.ta ul{list-style:none;margin:0;padding:0}
-.ta li{padding:11px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.ta .l{font-size:.98rem}
-.ta .r{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap;text-align:right}
-
-/* ---------- Footer ---------- */
-.foot{background:var(--dark);color:var(--bg);padding:clamp(48px,8vw,86px) 0}
-.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:end}
-.foot h2{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,5vw,3rem);
-  letter-spacing:-.01em;margin:0 0 .5em;line-height:1.02;color:var(--bg)}
-.foot a{color:var(--bg)}
-.foot .fl{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:6px}
-.foot .pill{color:var(--bg);border-color:rgba(255,255,255,.22)}
-.foot .pill:hover{border-color:var(--accent-2);background:rgba(255,255,255,.06)}
-.foot .colophon{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);line-height:1.9;text-align:right}
-
-/* ---------- Reveal animation ---------- */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
-
-/* ---------- Responsive ---------- */
-@media (max-width:820px){
-  body{font-size:17px}
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);
-    border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px var(--pad)}
-  .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
-  .nav-links a:last-child{border-bottom:none}
-  .nav-toggle{display:inline-block}
-  .about-grid,.xp-grid,.ta-grid,.foot .wrap{grid-template-columns:1fr}
-  .hero-grid{grid-template-columns:1fr;gap:28px}
-  .hero-photo{order:-1;max-width:190px}
-  .fig-row{grid-template-columns:1fr}
-  .foot .colophon{text-align:left}
-  .thread-head{grid-template-columns:1fr}
-  .thread-rn{font-size:1.6rem}
-  .works{grid-column:1}
-  .news-list li{grid-template-columns:92px 1fr;gap:12px}
-}
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
+:root{--bg:#f7f8fa;--paper:#fff;--bg-2:#edf1f6;--ink:#202c3c;--muted:#5b6878;--line:#dce2ea;--accent:#345d88;--accent-2:#6888ac;--dark:#202e40;--maxw:1180px;--pad:clamp(22px,5vw,64px);--serif:'Newsreader',Georgia,serif;--display:'Fraunces',Georgia,serif;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:4px}a:hover{color:var(--accent)}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:5px}img{display:block;max-width:100%}button{font:inherit}.wrap{max-width:var(--maxw);margin:auto;padding-inline:var(--pad)}.mono,.sec-num,.col-h,.date,.when,.badge,.colophon{font-family:var(--mono)}.mono{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}.skip-link{position:fixed;top:8px;left:12px;z-index:100;background:var(--ink);color:#fff;padding:10px 18px;transform:translateY(-180%)}.skip-link:focus{transform:none}.axis{height:1px;background:var(--line);position:relative}.axis:after{content:'';position:absolute;left:var(--pos,50%);top:-3px;width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 6px var(--bg)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,248,250,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{max-width:var(--maxw);margin:auto;padding:15px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:.87rem;font-weight:650;letter-spacing:-.02em;white-space:nowrap}.brand .cn{font-weight:400;color:var(--muted);margin-left:7px}.nav-links{display:flex;gap:25px;list-style:none;margin:0;padding:0}.nav-links a{display:block;font-size:.76rem;color:var(--muted);text-decoration:none;position:relative;padding:6px 0}.nav-links a:hover,.nav-links a.active{color:var(--accent)}.nav-links a.active:after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent)}.nav-toggle{display:none;border:1px solid var(--line);background:var(--paper);border-radius:6px;min-height:44px;padding:7px 14px;color:var(--ink);cursor:pointer}
+.hero{padding:clamp(38px,6vw,72px) 0 clamp(45px,6vw,76px)}.doc-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);margin-bottom:38px}.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 250px;align-items:center;gap:70px}.hero-role{font-size:.75rem;color:var(--accent);margin:0 0 18px;font-weight:550}.hero h1{font-family:var(--display);font-weight:500;letter-spacing:-.055em;font-size:clamp(2.6rem,5.7vw,4.65rem);line-height:1.06;margin:0 0 18px}.hero h1 .cn{display:inline-block;font-family:var(--serif);font-size:.35em;font-weight:400;letter-spacing:.06em;color:var(--muted);margin-left:7px;white-space:nowrap}.tagline{font-size:.68rem;line-height:1.9;letter-spacing:.01em;color:var(--accent);margin-bottom:25px}.lede{font-family:var(--serif);font-size:clamp(1.4rem,2.35vw,1.9rem);line-height:1.3;letter-spacing:-.02em;margin:0 0 15px;max-width:33ch}.lede em{font-weight:400;color:var(--accent)}.hero-summary{max-width:51ch;font-size:.87rem;line-height:1.7;color:var(--muted);margin:0 0 26px}.hero-links,.fl{display:flex;flex-wrap:wrap;gap:9px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:42px;padding:9px 15px;border:1px solid var(--line);border-radius:5px;text-decoration:none;font-size:.72rem;font-weight:500;background:var(--paper);transition:background .15s,border-color .15s}.pill:hover{border-color:var(--accent);background:var(--bg-2)}.pill.solid{background:var(--ink);color:#fff;border-color:var(--ink)}.pill.solid:hover{background:var(--accent)}.hero-photo{margin:0;position:relative}.hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px;box-shadow:12px 12px 0 var(--bg-2);border:1px solid var(--line)}.hero-photo figcaption{font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:24px;letter-spacing:.03em}
+section{padding:64px 0;scroll-margin-top:84px}#contact{scroll-margin-top:76px}.sec-label{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}.sec-num{font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}.sec-label h2{font-family:var(--display);font-size:clamp(1.8rem,3.4vw,2.35rem);font-weight:500;line-height:1.17;letter-spacing:-.035em;margin:0}.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:65px}.about-body p{font-size:.92rem;margin:0 0 17px;max-width:62ch}.about-body strong{font-weight:600}.about-body .name-note{color:var(--muted);font-size:.82rem}.about-body a,.meta a,.xp a,.news-list a{color:var(--accent)}.focus{border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:6px 24px 22px}.focus ul{list-style:none;margin:0;padding:0}.focus .row{padding:16px 0;border-bottom:1px solid var(--line)}.focus .k{font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--accent);display:block;margin-bottom:5px}.focus .v{font-size:.81rem;line-height:1.6;display:block;color:var(--muted)}.chips,.thread-tags{display:flex;flex-wrap:wrap;gap:6px}.chips{margin-top:19px}.chip{font-size:.63rem;line-height:1.5;border:1px solid var(--line);border-radius:4px;padding:4px 8px;color:var(--muted);background:var(--bg)}
+.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.news-list li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:24px;padding:15px 0;border-bottom:1px solid var(--line)}.news-list .date{font-size:.65rem;line-height:1.8;color:var(--accent);padding-top:2px}.news-list .what{font-size:.84rem;line-height:1.65}.news-list strong{font-weight:600}#research>.wrap>p{font-size:.9rem;line-height:1.7;margin-bottom:32px!important}.thread{display:grid;grid-template-columns:245px minmax(0,1fr);gap:38px;border-top:1px solid var(--line);padding:34px 0}.thread-head{min-width:0}.thread-rn{font-family:var(--serif);font-style:italic;color:var(--accent-2);font-size:1.8rem;line-height:1;margin-bottom:18px}.thread-head h3{font-family:var(--display);font-weight:500;font-size:1.45rem;letter-spacing:-.025em;line-height:1.2;margin:0 0 14px}.thread-head p{font-size:.78rem;line-height:1.7;color:var(--muted);margin:0 0 18px}.thread-tags .chip{font-size:.59rem}.works{list-style:none;margin:0;padding:0;min-width:0}.work{position:relative;display:block;padding:19px 0;border-bottom:1px solid var(--line)}.work:first-child{padding-top:0}.work:last-child{border-bottom:0}.work .dot{display:none}.work .title{font-family:var(--serif);font-size:1.15rem;font-weight:500;line-height:1.32;letter-spacing:-.005em;margin:0 0 9px}.work .meta{font-size:.74rem;line-height:1.7;color:var(--muted);margin:0}.venue{font-weight:600}.badge{display:table;width:fit-content;font-size:.56rem;font-weight:500;line-height:1.5;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--line);border-radius:3px;margin-bottom:10px;color:var(--muted);background:var(--paper)}.badge.pr{color:#345d88;background:#edf3fa;border-color:#c8d7e8}.badge.rev{color:#815326;background:#fbf2e8;border-color:#e6cfae}.work.featured{padding:22px;background:var(--paper);border:1px solid var(--line);border-radius:7px;margin-bottom:6px}.work.featured .badge{background:var(--bg-2);color:var(--accent)}.codelink{display:inline-block;font-family:var(--mono);font-size:.65rem;font-weight:600;white-space:nowrap}
+.xp-grid,.ta-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}.col-h{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin:0 0 10px}.col-note{font-size:.78rem;color:var(--muted);line-height:1.6;margin:0 0 22px}.xp ul,.ta ul{list-style:none;padding:0;margin:0}.xp li{padding:21px 0;border-top:1px solid var(--line)}.xp .role{display:block;font-size:.88rem;font-weight:600;line-height:1.5}.xp .org{display:block;font-size:.78rem;color:var(--muted);margin:3px 0}.xp .when{display:block;font-size:.59rem;color:var(--accent);text-transform:uppercase;letter-spacing:.035em;margin:6px 0 9px}.xp .desc{display:block;font-size:.78rem;line-height:1.7;color:var(--muted)}.with-logo{display:flex;align-items:start;gap:15px}.entry-body{min-width:0;flex:1}.logo{display:grid;place-items:center;flex:0 0 34px;height:34px;border:1px solid var(--line);border-radius:7px;background:var(--paper);font-family:var(--display);color:var(--accent);margin-top:3px}.ta li{padding:16px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:5px}.ta .l{font-size:.85rem;line-height:1.6}.ta .r{font-family:var(--mono);font-size:.6rem;color:var(--muted)}.foot{background:var(--dark);color:#fff;padding:64px 0}.foot .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) 1fr;gap:40px;align-items:end}.foot h2{font-family:var(--display);font-size:2.7rem;font-weight:400;line-height:1.2;letter-spacing:-.03em;margin:0 0 17px}.foot p{font-size:.87rem;line-height:1.75}.foot .fl{margin-top:23px}.foot .pill{color:#fff;background:transparent;border-color:#566474}.foot .pill:hover{background:#304158;border-color:#96acc6}.colophon{font-size:.61rem;line-height:2.1;color:#bdc7d5;text-align:right}.colophon a{color:#fff}.reveal{opacity:1;transform:none}
+@media(min-width:1100px){.hero-grid{grid-template-columns:minmax(0,1fr) 265px}}
+@media(max-width:900px){.hero-grid{gap:36px;grid-template-columns:minmax(0,1fr) 220px}.hero h1{font-size:3.2rem}.about-grid{gap:32px}.thread{grid-template-columns:210px minmax(0,1fr);gap:28px}.xp-grid,.ta-grid{gap:32px}.nav-links{gap:18px}}
+@media(max-width:720px){.nav-inner{flex-wrap:wrap;gap:0;min-height:66px;padding-block:10px}.nav-toggle{display:block}.nav-links{display:flex;width:100%;flex-direction:column;gap:0;padding:10px 0 2px}.nav-links a{padding:12px 2px;border-top:1px solid var(--line);font-size:.85rem}.js .nav-links{display:none}.js .nav-links.open{display:flex}.nav-links a.active:after{display:none}.hero{padding-top:30px}.doc-head{font-size:.58rem;margin-bottom:30px}.hero-grid{grid-template-columns:minmax(0,1fr) 120px;gap:20px;align-items:start}.hero-main{display:contents}.hero-role{grid-column:1;margin:4px 0 0;font-size:.68rem}.hero h1{grid-column:1;font-size:clamp(2rem,7vw,3rem);margin:0;align-self:start}.hero h1 .cn{font-size:.36em;margin-left:3px}.hero-photo{grid-column:2;grid-row:1/4}.hero-photo figcaption{font-size:.5rem;line-height:1.5;margin-top:16px}.hero-photo img{box-shadow:6px 6px 0 var(--bg-2)}.tagline{grid-column:1;font-size:.6rem;margin:0;line-height:1.7}.lede{grid-column:1/-1;font-size:1.6rem;margin:10px 0 0;max-width:100%}.hero-summary{grid-column:1/-1;margin:0;font-size:.84rem}.hero-links{grid-column:1/-1;gap:8px}.pill{min-height:44px;padding:10px 13px;font-size:.7rem}.about-grid,.xp-grid,.ta-grid,.foot .wrap{grid-template-columns:1fr;gap:30px}.thread{grid-template-columns:1fr;gap:25px;padding:30px 0}.thread-head{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px}.thread-rn{font-size:1.55rem;margin:0}.thread-head h3{font-size:1.5rem}.thread-head p{font-size:.82rem}.work .title{font-size:1.18rem}.work .meta{font-size:.78rem}.work.featured{padding:18px}.news-list li{grid-template-columns:72px minmax(0,1fr);gap:14px}.news-list .date{font-size:.6rem}.news-list .what{font-size:.8rem}.sec-label{gap:12px;margin-bottom:26px}.sec-num{font-size:.6rem}section{padding:45px 0}.colophon{text-align:left}.foot{padding:48px 0}.foot h2{font-size:2.3rem}.focus{padding-inline:20px}}
+@media(max-width:370px){.hero-grid{grid-template-columns:minmax(0,1fr) 92px;gap:16px}.hero h1{font-size:1.9rem}.hero-role{font-size:.61rem}.hero h1 .cn{display:block;margin:9px 0 0}.tagline{font-size:.57rem}.lede{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+@media print{.nav,.hero-links,.fl,.skip-link{display:none!important}body{background:#fff;color:#000;font-size:11pt}.wrap{max-width:none;padding:0}.hero,section,.foot{padding:20px 0}.hero-grid{grid-template-columns:1fr 120px}.hero h1{font-size:32pt}.thread{grid-template-columns:1fr}.work{break-inside:avoid}.foot{background:#fff;color:#000}.foot h2,.foot p,.colophon,.colophon a{color:#000!important}.hero-photo img{box-shadow:none}.axis:after{display:none}}
 </style>
 </head>
-<body>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#top" class="brand" style="text-decoration:none">Shuo Wang <span class="cn">王硕</span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
@@ -274,27 +51,30 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
   </div>
 </nav>
 
-<a id="top"></a>
+<main id="main">
 <header class="hero">
   <div class="wrap">
     <div class="doc-head mono">
-      <span>Shuo Wang · 王硕 — Research Portfolio</span>
+      <span>Research &amp; selected work</span>
       <span>NUS · Singapore</span>
     </div>
     <div class="hero-grid">
       <div class="hero-main">
-        <h1>Shuo&nbsp;Wang <span class="cn">王硕</span></h1>
+        <p class="hero-role">Master’s student &amp; research assistant · NUS</p>
+<h1>Shuo Wang <span class="cn" lang="zh">王硕</span></h1>
         <div class="tagline">Human&ndash;Computer Interaction &nbsp;·&nbsp; Computational Social Science &nbsp;·&nbsp; Digital Humanities</div>
-        <p class="lede">I study how people act together inside systems built for them — games, platforms, buildings, archives — and lately I have started <em>building some of those systems</em> myself.</p>
-        <div class="hero-links">
-          <a class="pill solid" href="mailto:shuowang@u.nus.edu">Email</a>
+        <p class="lede">Understanding people, platforms, and culture.<br><em>Building systems to ask better questions.</em></p>
+        <p class="hero-summary">I combine computational methods and interactive design to study how people make meaning and act together.</p>
+<div class="hero-links">
+<a class="pill solid" href="#research">Explore my research <span aria-hidden="true">↗</span></a>
+          <a class="pill" href="mailto:shuowang@u.nus.edu">Email</a>
           <a class="pill" href="WANG_Shuo_Academic_CV.pdf">CV ↓</a>
           <a class="pill" href="https://github.com/cheer-shuowang">GitHub</a>
           <a class="pill" href="https://www.linkedin.com/in/shuo-wang-38038a3a3">LinkedIn</a>
         </div>
       </div>
       <figure class="hero-photo">
-        <img src="profile.png" alt="Shuo Wang (王硕)">
+        <img src="profile.png" alt="Shuo Wang (王硕)" width="560" height="700" fetchpriority="high" decoding="async">
         <figcaption>Shuo Wang · Singapore</figcaption>
       </figure>
     </div>
@@ -306,23 +86,23 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">01 / About</span><h2>The short version</h2></div>
+    <div class="sec-label"><span class="sec-num">01 / About</span><h2>A little about me</h2></div>
     <div class="about-grid">
       <div class="about-body reveal">
-        <p>I'm a master's student at NUS — you can also call me <strong>Allen</strong>. I work across <strong>human&ndash;computer interaction</strong>, <strong>computational social science</strong>, and the <strong>digital humanities</strong>, using NLP, machine learning, and LLM-based simulation. Most of my work so far has been measuring how people behave in systems; more recently I have been designing systems too, which turns out to be a good way to find out what you did not understand.</p>
-        <p>I study at the <strong><a href="https://www.nus.edu.sg/">National University of Singapore</a></strong> and work as a research assistant at the CALM Lab. Alongside my studies I interned in strategy and product at <strong>Bilibili</strong>, <strong>Tencent</strong>, and <strong>Weibo</strong>, where I saw at close range how platform design shapes what people do. A lot of my questions started there.</p>
+        <p>I'm <strong>Shuo (Allen) Wang</strong>, a master's student at the National University of Singapore. My research connects <strong>human&ndash;computer interaction</strong>, <strong>computational social science</strong>, and the <strong>digital humanities</strong>. I use NLP, machine learning, and LLM-based simulation to understand social behaviour, and build interactive systems to explore new research questions.</p>
+        <p>At <a href="https://www.nus.edu.sg/">NUS</a>, I work with the CALM Lab on AI for historical texts and collaborate with AERO Lab on a serious game about energy and comfort. Earlier roles at <strong>Bilibili</strong>, <strong>Tencent</strong>, and <strong>Weibo</strong> shaped my interest in how platform design influences behaviour.</p>
         <p class="name-note">Outside work: travel, the violin, and a fair number of hours in the games I also study.</p>
       </div>
       <div class="focus reveal">
         <ul>
-          <li class="row"><span class="k">HCI</span><span class="v">How people perceive and act inside designed systems — online communities, games, and buildings.</span></li>
-          <li class="row"><span class="k">CSS</span><span class="v">Computational social science — polarization, risk governance, algorithmic labour, urban life.</span></li>
-          <li class="row"><span class="k">DH</span><span class="v">Digital humanities — computation and multimodal AI applied to cultural and historical texts.</span></li>
+          <li class="row"><span class="k" translate="no">HCI</span><span class="v">How people perceive and act inside designed systems — online communities, games, and buildings.</span></li>
+          <li class="row"><span class="k" translate="no">CSS</span><span class="v">Computational social science — polarization, risk governance, and urban life.</span></li>
+          <li class="row"><span class="k" translate="no">DH</span><span class="v">Digital humanities — computation and multimodal AI applied to cultural and historical texts.</span></li>
         </ul>
         <div class="chips">
           <span class="chip">NLP</span><span class="chip">Machine learning</span>
           <span class="chip">LLM simulation</span><span class="chip">Multimodal CV</span>
-          <span class="chip">Spatial-temporal</span>
+          <span class="chip">Spatiotemporal</span>
         </div>
       </div>
     </div>
@@ -334,10 +114,10 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
 <!-- NEWS -->
 <section id="news">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">02 / News</span><h2>Recently</h2></div>
+    <div class="sec-label"><span class="sec-num">02 / News</span><h2>Latest updates</h2></div>
     <ul class="news-list reveal">
       <li><span class="date">Aug 2026</span><span class="what">Started a project with <a href="https://bowendu-nus.github.io/aerolab">AERO Lab</a> (Dr. Bowen Du, NUS): a <strong>serious game about energy and indoor environmental quality</strong>, set in SDE4, NUS's net-zero energy building.</span></li>
-      <li><span class="date">Apr 2026</span><span class="what">Two conference contributions announced in one day: <strong>IC2S2 2026</strong> (accepted parallel talk, Burlington, VT) and <strong>SEASIA 2026</strong> (selected for the conference programme, NTU Singapore).</span></li>
+      <li><span class="date">Apr 2026</span><span class="what">Conference updates: <strong>IC2S2 2026</strong> (accepted parallel talk, Burlington, VT) and <strong>SEASIA 2026</strong> (selected for the conference programme, NTU Singapore).</span></li>
       <li><span class="date">Apr 2026</span><span class="what">Poster accepted at <strong>NLPercep 2026</strong>, a workshop at ICWSM 2026.</span></li>
       <li><span class="date">Feb 2026</span><span class="what">First-author extended abstract accepted at <strong>DiGRA 2026</strong>.</span></li>
       <li><span class="date">Nov 2025</span><span class="what">Poster accepted at the <strong>4th Frontiers of OR &amp; AI Workshop</strong>, Peking University (Shenzhen).</span></li>
@@ -350,9 +130,9 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
 <!-- RESEARCH -->
 <section id="research">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">03 / Research</span><h2>Three threads</h2></div>
+    <div class="sec-label"><span class="sec-num">03 / Research</span><h2>Research &amp; selected work</h2></div>
     <p class="reveal" style="max-width:64ch;color:var(--muted);margin:-10px 0 8px">
-      One question runs through all three: how do people — as communities, publics, and cultures — make meaning and act together in a digital age? What differs is where I look and what I do about it. The first designs and evaluates systems, the second measures behaviour at scale, the third turns both on cultural and historical material.
+      Three connected directions: designing interactive systems, understanding social behaviour, and studying culture through computation.
     </p>
 
     <div class="thread reveal">
@@ -360,16 +140,16 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <div class="thread-rn">I</div>
         <div>
           <h3>Human&ndash;Computer Interaction</h3>
-          <p>How people perceive and act inside systems built for them &mdash; online communities, games, and the buildings we spend our days in. What a system makes visible, to whom, and what people do about it.</p>
+          <p>How people perceive and act in online communities, games, and the built environment. I study social perception and design interactive experiences for reflection.</p>
           <div class="thread-tags">
             <span class="chip">perception</span><span class="chip">social computing</span><span class="chip">serious games</span><span class="chip">built environment</span>
           </div>
         </div>
       </div>
       <ul class="works">
-        <li class="work"><span class="dot"></span><div>
+        <li class="work featured"><span class="dot"></span><div>
           <p class="title"><span class="badge">Project</span>A Net-Zero Building Game: Serious Game Design for Energy and Comfort at SDE4</p>
-          <p class="meta">In progress with <a href="https://bowendu-nus.github.io/aerolab">AERO Lab</a> (Dr. Bowen Du) · NUS Department of the Built Environment · a resource-management game set in NUS's net-zero energy building, where the electricity budget comes from real weather and rooftop generation rather than an invented difficulty setting — framed through reflective design rather than persuasion</p>
+          <p class="meta">In progress with <a href="https://bowendu-nus.github.io/aerolab">AERO Lab</a> (Dr. Bowen Du) · NUS Department of the Built Environment · a resource-management game set in NUS's net-zero energy building, using real weather and rooftop generation to explore trade-offs between energy and comfort through reflective design</p>
         </div></li>
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge">Poster</span>Who Decides What's Toxic? How Player Identity Shapes Social Perception of Toxicity in Online Game Communities</p>
@@ -378,7 +158,7 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge pr">Extended abstract</span>Label Offensive and Defensive in Interest-Based Battlefields: Identity Politics and Public Opinion Polarization in China's ACG Communities</p>
           <p class="meta">Shuo Wang · <span class="venue">DiGRA 2026</span> (accepted extended abstract)</p>
-          <figure class="fig"><img src="images/acg-polarization.png" alt="ACG opinion polarization" onerror="this.closest('figure').style.display='none'"><figcaption>Interest-based “offensive vs. defensive” labeling and opinion polarization across ACG communities.</figcaption></figure>
+          
         </div></li>
       </ul>
     </div>
@@ -388,9 +168,9 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <div class="thread-rn">II</div>
         <div>
           <h3>Computational Social Science</h3>
-          <p>How publics, markets and cities behave under stress and in ordinary life &mdash; opinion polarization, crisis and risk governance, algorithmic labour markets, and how urban space shapes social experience. Mostly text mining, LLM-based simulation, survival analysis, and spatial-temporal models.</p>
+          <p>How communities respond to crises and how urban environments shape social experience, using text mining, LLM-based simulation, and spatiotemporal models.</p>
           <div class="thread-tags">
-            <span class="chip">polarization</span><span class="chip">crisis governance</span><span class="chip">algorithmic labor</span><span class="chip">urban CSS</span>
+            <span class="chip">polarization</span><span class="chip">crisis governance</span><span class="chip">social simulation</span><span class="chip">urban CSS</span>
           </div>
         </div>
       </div>
@@ -398,18 +178,14 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge rev">Under review</span>Institutional Blame-Shifting, Cultural Context, and the Erosion of Collective Efficacy: An LLM-Based Simulation and Survey Approach</p>
           <p class="meta">Hongyang Zhang, Yu Lu Jin, Shuo Wang* · <span class="venue">Social Networks</span> (1st round)</p>
-          <figure class="fig"><img src="images/blame-simulation.png" alt="LLM-based simulation of collective efficacy" onerror="this.closest('figure').style.display='none'"><figcaption>LLM-based simulation: how institutional blame-shifting erodes collective efficacy.</figcaption></figure>
+          
         </div></li>
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge pr">Talk</span>Alone in the Crowd? Urban Population Density and Loneliness Expression on Chinese Social Media</p>
           <p class="meta">Shuo Wang, Xue Wang* · <span class="venue">IC2S2 2026</span>, Burlington, VT (accepted parallel talk)</p>
-          <figure class="fig"><img src="images/loneliness-density.png" alt="Urban density and loneliness expression" onerror="this.closest('figure').style.display='none'"><figcaption>Urban population density against loneliness expression on Chinese social media.</figcaption></figure>
+          
         </div></li>
-        <li class="work"><span class="dot"></span><div>
-          <p class="title"><span class="badge">Project</span>Algorithmic Selection and Value Alienation in the Esports Labor Market</p>
-          <p class="meta">In progress, with Runyi Ma &amp; Yining Fang · digital "meritocracy" in professional <span class="venue">League of Legends</span> — entry, selection, valuation via scraping, logistic regression &amp; survival analysis</p>
-          <figure class="fig"><img src="images/esports-survival.png" alt="Esports career survival curves" onerror="this.closest('figure').style.display='none'"><figcaption>Who survives in pro play — career survival curves for professional League of Legends players.</figcaption></figure>
-        </div></li>
+        
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge">Programme selection</span>Governing Platform Entry: ASEAN States and the Politics of Chinese Esports Infrastructure</p>
           <p class="meta">Shuo Wang, Bin Yi Yang · <span class="venue">SEASIA 2026, NTU Singapore</span> (selected for the conference programme)</p>
@@ -421,7 +197,7 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge">Thesis</span>Institution, Context, and Action: A Text-Mining Analysis of Crisis Evolution in China's Major Disaster Accidents (2010–2025)</p>
           <p class="meta">B.A. thesis · Ocean University of China · advised by <a href="http://siapa.ouc.edu.cn/2021/0827/c18282a344995/page.htm">Xue Wang</a> · LDA over 30 national disaster-investigation reports</p>
-          <figure class="fig"><img src="images/thesis-lda.png" alt="Topic evolution across disaster-investigation reports" onerror="this.closest('figure').style.display='none'"><figcaption>Topic structure and evolution across national disaster-investigation reports (LDA).</figcaption></figure>
+          
         </div></li>
       </ul>
     </div>
@@ -431,30 +207,27 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <div class="thread-rn">III</div>
         <div>
           <h3>Digital Humanities</h3>
-          <p>Computational and multimodal-AI methods applied to cultural material, historical and contemporary alike &mdash; building the datasets and models that let us put new questions to old sources, and read cultural change at scale.</p>
+          <p>Computational and multimodal AI methods for historical texts and contemporary culture: building datasets, tracing semantic change, and studying cultural patterns at scale.</p>
           <div class="thread-tags">
             <span class="chip">cultural analytics</span><span class="chip">computational heritage</span><span class="chip">VLM pipelines</span><span class="chip">multimodal</span>
           </div>
         </div>
       </div>
       <ul class="works">
-        <li class="work"><span class="dot"></span><div>
+        <li class="work featured"><span class="dot"></span><div>
           <p class="title"><span class="badge">Project</span>Playing Heaven: Remapping Early Modern Neo-Confucian Worlds with AI</p>
           <p class="meta">CALM Lab, NUS · advised by <a href="https://yumenghou.com/">Prof. Yumeng Hou</a> · <a href="https://www.schmidtsciences.org/humanities-and-ai-virtual-institute/#modal-playing-heaven-remapping-early-modern-neo-confucian-worlds-with-ai">Schmidt Sciences HAVI</a> · building <span class="venue">DeepPast</span>, an AI research assistant for low-resource early-modern East Asian texts &nbsp; <a class="codelink" href="https://github.com/cheer-shuowang/vlm-martial-arts-dataset">Code ↗</a></p>
-          <div class="fig-row">
-            <figure><img src="images/playing-heaven-1.jpg" alt="Playing Heaven — dataset construction" onerror="this.closest('figure').style.display='none'"><figcaption>Dataset construction — a VLM pipeline extracting structured data from historical manuals.</figcaption></figure>
-            <figure><img src="images/playing-heaven-2.jpg" alt="Playing Heaven — semantic change" onerror="this.closest('figure').style.display='none'"><figcaption>Semantic change of Neo-Confucian concepts across an 18-source corpus.</figcaption></figure>
-          </div>
+          
         </div></li>
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge">Working paper</span>A Computational Semantic Analysis of the "Neo-Confucianization" of Wang Yangming's Military Discourse</p>
           <p class="meta">Contextualized embeddings (SikuRoBERTa) + representational similarity analysis over an 18-source corpus — Neo-Confucian uptake is selective, with a Qing-stage "embodiment" turn of 氣 and 心</p>
-          <figure class="fig"><img src="images/wangyangming-rsa.png" alt="Representational similarity of Neo-Confucian concepts" onerror="this.closest('figure').style.display='none'"><figcaption>Representational similarity of Neo-Confucian concepts across an 18-source corpus.</figcaption></figure>
+          
         </div></li>
         <li class="work"><span class="dot"></span><div>
           <p class="title"><span class="badge rev">Under review</span>De-idolization: Computational Evidence for a Multimodal Aesthetic Shift in Taiwanese Popular Music, 1990–2025</p>
           <p class="meta">Shuo Wang · <span class="venue">Anthology of Computers and the Humanities</span> · ~950 albums scored on album covers (face detection + CLIP) and lyrics (sentiment, pronouns, Hokkien orthography) — a decoupling design isolates production mode from calendar time</p>
-          <figure class="fig"><img src="images/deidol-shift.png" alt="De-idolization — standardized measures by decade" onerror="this.closest('figure').style.display='none'"><figcaption>The idol aesthetic peaks and collapses as vernacular and low-affect signals rise — standardized cover and lyric measures by decade.</figcaption></figure>
+          
         </div></li>
       </ul>
     </div>
@@ -473,7 +246,7 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <p class="col-note">Selected assistantships and labs.</p>
         <ul>
           <li><span class="role">Research Assistant — CALM Lab</span><span class="org">National University of Singapore · <a href="https://yumenghou.com/">Prof. Yumeng Hou</a></span><span class="when">2026 – Present</span><span class="desc">Playing Heaven (Schmidt Sciences HAVI): a Qwen3-VL pipeline extracting structured data from 26 historical manuals; modeling semantic change of Neo-Confucian concepts.</span></li>
-          <li><span class="role">Research Assistant — PGSC Laboratory</span><span class="org">HKUST (Guangzhou)</span><span class="when">Apr – Oct 2025</span><span class="desc">Sustainability-policy &amp; carbon-metric databases for 20+ countries (Python/Pandas); an automated framework cut data error from 32% to 8%.</span></li>
+          
           <li><span class="role">Research Assistant — Public Safety &amp; Risk Governance</span><span class="org">Ocean University of China</span><span class="when">2023 – 2025</span><span class="desc">ML risk-analysis models (scikit-learn, XGBoost); early-warning pipelines. Participant on NSSFC Key Project 21AZZ014 &amp; Shandong NSF ZR2023QG090.</span></li>
           <li><span class="role">Research Assistant / Volunteer</span><span class="org">CUFE · Duke Kunshan University</span><span class="when">2023</span><span class="desc">County-level climate datasets &amp; policy briefs (CUFE); GIS mapping of human–wildlife correlations from 500+ camera images (DKU).</span></li>
         </ul>
@@ -482,10 +255,10 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <h3 class="col-h">Industry</h3>
         <p class="col-note">Games, ACG, and platform companies — the field where my research questions started.</p>
         <ul>
-          <li class="with-logo"><span class="logo"><span class="lf">B</span><img src="images/logo-bilibili.png" alt="Bilibili logo" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'"></span><span class="entry-body"><span class="role">Strategy Product Intern — Bilibili</span><span class="org">Data Strategy Group</span><span class="when">Apr – Jun 2025</span><span class="desc">Behavior-tagging via SQL clustering to segment high-value user cohorts; data-driven retention analysis.</span></span></li>
-          <li class="with-logo"><span class="logo"><span class="lf">T</span><img src="images/logo-tencent.png" alt="Tencent logo" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'"></span><span class="entry-body"><span class="role">Product Planning Intern — Tencent</span><span class="org">Interactive Entertainment Group</span><span class="when">Jul – Oct 2024</span><span class="desc">In-game commerce system planning; cross-department compliance workflows; dashboard-based resource allocation.</span></span></li>
-          <li class="with-logo"><span class="logo"><span class="lf">W</span><img src="images/logo-weibo.png" alt="Sina Weibo logo" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'"></span><span class="entry-body"><span class="role">ACGN Operation Intern — Sina Weibo</span><span class="org">ACGN Operations</span><span class="when">Oct 2023 – Jun 2024</span><span class="desc">Behavioral analysis of ACGN communities to inform content strategy; helped develop an AI-assisted engagement tool.</span></span></li>
-          <li class="with-logo"><span class="logo"><span class="lf">H</span><img src="images/logo-hero.png" alt="Hero Games logo" onerror="this.remove()" onload="this.previousElementSibling.style.display='none'"></span><span class="entry-body"><span class="role">Operation Intern — Hero Games</span><span class="org">Nebula Business Unit</span><span class="when">Jun – Sep 2023</span><span class="desc">Game privacy-policy compliance review; cross-team risk identification and resolution.</span></span></li>
+          <li class="with-logo"><span class="logo"><span class="lf">B</span></span><span class="entry-body"><span class="role">Strategy Product Intern — Bilibili</span><span class="org">Data Strategy Group</span><span class="when">Apr – Jun 2025</span><span class="desc">Behavior-tagging via SQL clustering to segment high-value user cohorts; data-driven retention analysis.</span></span></li>
+          <li class="with-logo"><span class="logo"><span class="lf">T</span></span><span class="entry-body"><span class="role">Product Planning Intern — Tencent</span><span class="org">Interactive Entertainment Group</span><span class="when">Jul – Oct 2024</span><span class="desc">In-game commerce system planning; cross-department compliance workflows; dashboard-based resource allocation.</span></span></li>
+          <li class="with-logo"><span class="logo"><span class="lf">W</span></span><span class="entry-body"><span class="role">ACGN Operation Intern — Sina Weibo</span><span class="org">ACGN Operations</span><span class="when">Oct 2023 – Jun 2024</span><span class="desc">Behavioral analysis of ACGN communities to inform content strategy; helped develop an AI-assisted engagement tool.</span></span></li>
+          <li class="with-logo"><span class="logo"><span class="lf">H</span></span><span class="entry-body"><span class="role">Operation Intern — Hero Games</span><span class="org">Nebula Business Unit</span><span class="when">Jun – Sep 2023</span><span class="desc">Game privacy-policy compliance review; cross-team risk identification and resolution.</span></span></li>
         </ul>
       </div>
     </div>
@@ -497,7 +270,7 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
 <!-- TEACHING & AWARDS -->
 <section id="teaching">
   <div class="wrap">
-    <div class="sec-label"><span class="sec-num">05 / Teaching &amp; Awards</span><h2>Also</h2></div>
+    <div class="sec-label"><span class="sec-num">05 / Teaching &amp; Awards</span><h2>Teaching &amp; recognition</h2></div>
     <div class="ta-grid">
       <div class="ta reveal">
         <h3 class="col-h">Teaching</h3>
@@ -517,6 +290,7 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
   </div>
 </section>
 
+</main>
 <footer class="foot" id="contact">
   <div class="wrap">
     <div>
@@ -529,33 +303,25 @@ section{padding:clamp(48px,8vw,92px) 0;scroll-margin-top:72px}
         <a class="pill" href="https://www.linkedin.com/in/shuo-wang-38038a3a3">LinkedIn</a>
       </div>
     </div>
-    <div class="colophon">
-      Shuo Wang · 王硕<br>
-      Set in Fraunces, Newsreader<br>&amp; Space Mono<br>
-      © 2026 · Built on GitHub Pages
-    </div>
+    <div class="colophon">Shuo Wang · 王硕<br>National University of Singapore<br><a href="#top">Back to top ↑</a><br>© 2026</div>
   </div>
 </footer>
 
 <script>
-// mobile nav
-const tog=document.querySelector('.nav-toggle'),links=document.getElementById('navlinks');
-tog.addEventListener('click',()=>{const o=links.classList.toggle('open');tog.setAttribute('aria-expanded',o)});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');tog.setAttribute('aria-expanded',false)}));
-// scroll reveal
-const mq=window.matchMedia('(prefers-reduced-motion:reduce)');
-if(!mq.matches){
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'))}
-// scroll-spy: highlight the nav link for the section in view
-const navMap={};
-document.querySelectorAll('.nav-links a').forEach(a=>{const id=a.getAttribute('href').slice(1);if(id)navMap[id]=a;});
-const spy=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
-  Object.values(navMap).forEach(a=>a.classList.remove('active'));
-  if(navMap[e.target.id])navMap[e.target.id].classList.add('active');
-}});},{rootMargin:'-45% 0px -50% 0px',threshold:0});
-['about','news','research','experience','teaching','contact'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+const toggle = document.querySelector('.nav-toggle');
+const links = document.getElementById('navlinks');
+function closeMenu(){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){closeMenu();toggle.focus();}});
+document.addEventListener('click',e=>{if(!e.target.closest('.nav'))closeMenu();});
+const navItems = Array.from(links.querySelectorAll('a'));
+const sections = navItems.map(a=>document.querySelector(a.getAttribute('href')));
+let scheduled=false;
+function updateNav(){let current=-1;sections.forEach((section,i)=>{if(section&&section.getBoundingClientRect().top<=150)current=i;});if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)current=sections.length-1;navItems.forEach((a,i)=>{a.classList.toggle('active',i===current);if(i===current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});scheduled=false;}
+window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateNav);}},{passive:true});
+window.addEventListener('resize',()=>{if(window.innerWidth>720)closeMenu();updateNav();});
+updateNav();
 </script>
 </body>
 </html>
